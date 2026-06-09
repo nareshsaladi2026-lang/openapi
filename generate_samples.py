@@ -1,692 +1,461 @@
-"""Generate sample response JSON files for all three OpenAPI specs."""
-import json, os
+"""Generate sample response JSON files derived directly from each endpoint's schema."""
+import json, os, re
 
 os.makedirs("samples/HUH_edi", exist_ok=True)
 os.makedirs("samples/HUH_ipc", exist_ok=True)
 os.makedirs("samples/HUH_INTG_Search", exist_ok=True)
 
-TS = "2026-06-08T10:30:00.000Z"
-DATE = "2026-06-08T00:00:00.000Z"
-
-# ── HUH_edi ──────────────────────────────────────────────────────────────────
-
-samples_edi = {
-    "ib_850": {
-        "attribute_char1": "STD",
-        "attribute_char2": "NET30",
-        "attribute_char3": "",
-        "attribute_char5": "",
-        "bill_to_party_code": "HUH-NA",
-        "bill_to_party_duns": "123456789",
-        "bill_to_party_gln": "0614141000012",
-        "case_upc_14_digit": "10012345678905",
-        "customer_item_number": "CUST-ITEM-001",
-        "direction": "IB",
-        "global_unique_id": "EDI-850-20260608-001",
-        "interchange_control_id": "000001234",
-        "interchange_receiver_id": "HUHTAMAKI",
-        "interchange_sender_id": "WALMART",
-        "order_date": "2026-06-08",
-        "order_number": "PO-20260608-001",
-        "po_number": "4500012345",
-        "quantity": "100",
-        "quantity_uom": "CA",
-        "ship_to_party_code": "DC-001",
-        "ship_to_party_gln": "0614141000029",
-        "unit_price": "12.50",
-        "vendor_code": "HUH-VENDOR-001"
-    },
-    "ib_856": {
-        "actual_ship_date": "2026-06-07",
-        "bill_of_lading": "BOL-20260607-001",
-        "carrier_code": "UPSN",
-        "direction": "IB",
-        "global_unique_id": "EDI-856-20260608-001",
-        "interchange_control_id": "000001235",
-        "interchange_receiver_id": "HUHTAMAKI",
-        "interchange_sender_id": "WALMART",
-        "item_number": "HUH-ITEM-001",
-        "lot_number": "LOT-2026060801",
-        "order_number": "PO-20260608-001",
-        "po_number": "4500012345",
-        "quantity_shipped": "100",
-        "quantity_uom": "CA",
-        "ship_date": "2026-06-07",
-        "shipment_id": "SHIP-20260607-001",
-        "tracking_number": "1Z999AA10123456784"
-    },
-    "ob_204": {
-        "batch": "BATCH-20260608-001",
-        "carrier_code": "RYDER",
-        "direction": "OB",
-        "global_unique_id": "EDI-204-20260608-001",
-        "interchange_control_id": "000001236",
-        "interchange_receiver_id": "RYDER",
-        "interchange_sender_id": "HUHTAMAKI",
-        "load_plan_no": "LP-20260608-001",
-        "order_number": "SO-20260608-001",
-        "status": "SENT"
-    },
-    "ob_204_header": {
-        "batch": "BATCH-20260608-001",
-        "bill_of_landing_number": "BOL-OB-001",
-        "carrier_code": "RYDER",
-        "customer_po_number": "4500012345",
-        "date_tbd1": "2026-06-09",
-        "date_tbd2": "2026-06-10",
-        "date_tbd3": "",
-        "direction": "OB",
-        "global_unique_id": "EDI-204-20260608-001",
-        "interchange_control_id": "000001236",
-        "interchange_receiver_id": "RYDER",
-        "interchange_sender_id": "HUHTAMAKI",
-        "load_id": "LOAD-001",
-        "load_plan_no": "LP-20260608-001",
-        "order_date": "2026-06-08",
-        "order_number": "SO-20260608-001",
-        "origin_city": "Green Bay",
-        "origin_state": "WI",
-        "origin_zip": "54301",
-        "dest_city": "Chicago",
-        "dest_state": "IL",
-        "dest_zip": "60601",
-        "status": "SENT",
-        "total_weight": "5000",
-        "weight_uom": "LB"
-    },
-    "ob_204_lines": {
-        "batch": "BATCH-20260608-001",
-        "global_unique_id": "EDI-204-20260608-001",
-        "item_description": "Molded Fiber Plate 10in",
-        "item_number": "HUH-ITEM-001",
-        "line_number": "1",
-        "load_plan_no": "LP-20260608-001",
-        "order_number": "SO-20260608-001",
-        "quantity": "500",
-        "quantity_uom": "CA",
-        "upc": "10012345678905",
-        "weight": "2500",
-        "weight_uom": "LB"
-    },
-    "ob_204_notes": {
-        "batch": "BATCH-20260608-001",
-        "global_unique_id": "EDI-204-20260608-001",
-        "load_plan_no": "LP-20260608-001",
-        "note_text": "Fragile - handle with care",
-        "note_type": "GEN",
-        "order_number": "SO-20260608-001"
-    },
-    "ob_810": {
-        "batch": "BATCH-INV-20260608-001",
-        "direction": "OB",
-        "global_unique_id": "EDI-810-20260608-001",
-        "interchange_control_id": "000001237",
-        "interchange_receiver_id": "WALMART",
-        "interchange_sender_id": "HUHTAMAKI",
-        "invoice_number": "INV-20260608-001",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "status": "SENT",
-        "total_amount": "6250.00"
-    },
-    "ob_810_details": {
-        "batch": "BATCH-INV-20260608-001",
-        "global_unique_id": "EDI-810-20260608-001",
-        "invoice_number": "INV-20260608-001",
-        "item_description": "Molded Fiber Plate 10in",
-        "item_number": "HUH-ITEM-001",
-        "line_amount": "6250.00",
-        "line_number": "1",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "quantity_invoiced": "500",
-        "quantity_uom": "CA",
-        "unit_price": "12.50"
-    },
-    "ob_810_header": {
-        "appointment_number": "APPT-001",
-        "batch": "BATCH-INV-20260608-001",
-        "bill_to_party_address1": "702 SW 8th St",
-        "bill_to_party_address2": "",
-        "bill_to_party_city": "Bentonville",
-        "bill_to_party_code": "WALMART-HQ",
-        "bill_to_party_country": "US",
-        "bill_to_party_duns": "009876543",
-        "bill_to_party_name": "Walmart Inc",
-        "bill_to_party_state": "AR",
-        "bill_to_party_zip": "72716",
-        "currency_code": "USD",
-        "direction": "OB",
-        "global_unique_id": "EDI-810-20260608-001",
-        "interchange_control_id": "000001237",
-        "interchange_receiver_id": "WALMART",
-        "interchange_sender_id": "HUHTAMAKI",
-        "invoice_date": "2026-06-08",
-        "invoice_number": "INV-20260608-001",
-        "order_number": "SO-20260608-001",
-        "payment_terms": "NET30",
-        "po_number": "4500012345",
-        "ship_date": "2026-06-07",
-        "total_amount": "6250.00",
-        "vendor_code": "HUH-VENDOR-001"
-    },
-    "ob_810_notes": {
-        "batch": "BATCH-INV-20260608-001",
-        "global_unique_id": "EDI-810-20260608-001",
-        "invoice_number": "INV-20260608-001",
-        "note_text": "Thank you for your business",
-        "note_type": "GEN"
-    },
-    "ob_810_sacdetails": {
-        "allowance_charge_code": "C",
-        "batch": "BATCH-INV-20260608-001",
-        "description": "Fuel Surcharge",
-        "global_unique_id": "EDI-810-20260608-001",
-        "invoice_number": "INV-20260608-001",
-        "line_number": "1",
-        "method_of_handling": "06",
-        "percent": "5.00",
-        "sac_amount": "312.50"
-    },
-    "ob_810_sacheader": {
-        "allowance_charge_code": "C",
-        "batch": "BATCH-INV-20260608-001",
-        "description": "Freight Charge",
-        "global_unique_id": "EDI-810-20260608-001",
-        "invoice_number": "INV-20260608-001",
-        "method_of_handling": "06",
-        "sac_amount": "150.00"
-    },
-    "ob_810_shipment": {
-        "batch": "BATCH-INV-20260608-001",
-        "bill_of_lading": "BOL-OB-001",
-        "carrier_code": "RYDER",
-        "global_unique_id": "EDI-810-20260608-001",
-        "invoice_number": "INV-20260608-001",
-        "ship_date": "2026-06-07",
-        "shipment_id": "SHIP-20260607-001",
-        "tracking_number": "RYDER-TRK-001",
-        "weight": "5000",
-        "weight_uom": "LB"
-    },
-    "ob_855": {
-        "asn_number": "ASN-20260608-001",
-        "global_unique_id": "EDI-855-20260608-001",
-        "interchange_control_id": "000001238",
-        "interchange_receiver_id": "WALMART",
-        "interchange_sender_id": "HUHTAMAKI",
-        "invoice_number": "INV-20260608-001",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "status": "SENT"
-    },
-    "ob_855_po": {
-        "acknowledgement_type": "AC",
-        "global_unique_id": "EDI-855-20260608-001",
-        "interchange_control_id": "000001238",
-        "item_number": "HUH-ITEM-001",
-        "line_number": "1",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "promised_ship_date": "2026-06-09",
-        "quantity_acknowledged": "500",
-        "quantity_uom": "CA"
-    },
-    "ob_856": {
-        "batch": "BATCH-ASN-20260608-001",
-        "direction": "OB",
-        "global_unique_id": "EDI-856-20260608-001",
-        "interchange_control_id": "000001239",
-        "interchange_receiver_id": "WALMART",
-        "interchange_sender_id": "HUHTAMAKI",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "shipment_id": "SHIP-20260607-001",
-        "status": "SENT"
-    },
-    "ob_856_adr": {
-        "address1": "702 SW 8th St",
-        "address2": "",
-        "address_type": "ST",
-        "city": "Bentonville",
-        "country": "US",
-        "global_unique_id": "EDI-856-20260608-001",
-        "name": "Walmart DC 6094",
-        "state": "AR",
-        "zip": "72716"
-    },
-    "ob_856_item": {
-        "case_upc_14_digit": "10012345678905",
-        "global_unique_id": "EDI-856-20260608-001",
-        "item_description": "Molded Fiber Plate 10in",
-        "item_number": "HUH-ITEM-001",
-        "line_number": "1",
-        "lot_number": "LOT-2026060801",
-        "order_line_number": "1",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "quantity_shipped": "500",
-        "quantity_uom": "CA",
-        "unit_price": "12.50"
-    },
-    "ob_856_order": {
-        "global_unique_id": "EDI-856-20260608-001",
-        "order_date": "2026-06-08",
-        "order_number": "SO-20260608-001",
-        "po_number": "4500012345",
-        "shipment_id": "SHIP-20260607-001"
-    },
-    "ob_856_pkg": {
-        "global_unique_id": "EDI-856-20260608-001",
-        "item_number": "HUH-ITEM-001",
-        "lot_number": "LOT-2026060801",
-        "package_level": "P",
-        "package_type": "PLT",
-        "quantity_per_pack": "50",
-        "sscc": "00612345678901234560"
-    },
-    "ob_856_shipmt": {
-        "appointment_number": "APPT-001",
-        "date_tbd1": "2026-06-09",
-        "date_tbd2": "",
-        "date_tbd3": "",
-        "delivery_date": "2026-06-10",
-        "department_number": "DEPT-001",
-        "direction": "OB",
-        "global_unique_id": "EDI-856-20260608-001",
-        "interchange_control_id": "000001239",
-        "interchange_receiver_id": "WALMART",
-        "interchange_sender_id": "HUHTAMAKI",
-        "load_number": "LOAD-001",
-        "pro_number": "PRO-20260607-001",
-        "seal_number": "SEAL-001",
-        "ship_date": "2026-06-07",
-        "shipment_id": "SHIP-20260607-001",
-        "trailer_number": "TRL-001",
-        "weight": "5000",
-        "weight_uom": "LB"
-    }
+# ── value hints: keyword → sample value ──────────────────────────────────────
+STR_HINTS = {
+    "global_unique_id":              "EDI-HUH-20260608-001",
+    "interchange_control_id":        "000001234",
+    "interchange_sender_id":         "HUHTAMAKI",
+    "interchange_receiver_id":       "WALMART",
+    "van_trading_partner_name":      "WALMART",
+    "po_number":                     "4500012345",
+    "customer_po_number":            "4500012345",
+    "order_po_number":               "4500012345",
+    "order_number":                  "SO-20260608-001",
+    "huhtamaki_order_number":        "SO-20260608-001",
+    "invoice_number":                "INV-20260608-001",
+    "asn_number":                    "ASN-20260608-001",
+    "shipment_identification":       "SHIP-20260607-001",
+    "shipment_identification_number":"SHIP-20260607-001",
+    "batch":                         "BATCH-20260608-001",
+    "runid":                         "9001",
+    "integration_run_id":            9001,
+    "direction":                     "OB",
+    "status":                        "SUCCESS",
+    "load_status":                   "DISPATCHED",
+    "shipment_status":               "IN_TRANSIT",
+    "assign_status":                 "ASSIGNED",
+    "so_freight_status":             "SENT",
+    "so_release_status":             "RELEASED",
+    "so_submit_status":              "SUBMITTED",
+    "so_update_status":              "UPDATED",
+    "error_msg":                     "",
+    "err_msg":                       "",
+    "error_message":                 "",
+    "error_messages":                "",
+    "int_message":                   "SUCCESS",
+    "int_messages":                  "SUCCESS",
+    "carrier":                       "RYDER",
+    "carrier_code":                  "RYDER",
+    "carrier_name":                  "Ryder Transportation",
+    "shipment_carrier_name":         "Ryder Transportation",
+    "standard_carrier_alpha_code":   "RDWY",
+    "interline_standard_carrier_alpha_code": "RDWY",
+    "shipment_standard_carrier_alpha_code":  "RDWY",
+    "transportation_method":         "TL",
+    "transportation_means":          "TL",
+    "means_code":                    "TL",
+    "means_of_transportation":       "TL",
+    "freight_terms":                 "PREPAID",
+    "shipment_method_paymentcode":   "PP",
+    "shipment_method_payment":       "PP",
+    "payment_method":                "PREPAID",
+    "currency_code":                 "USD",
+    "invoice_type":                  "DR",
+    "invoice_purpose_code":          "00",
+    "invoice_terms_code":            "NET30",
+    "invoice_terms_description":     "Net 30 Days",
+    "invoice_terms_net_days":        "30",
+    "invoice_terms_discount_percent":"0.00",
+    "invoice_terms_discount_days_due":"0",
+    "invoice_terms_discount_due_date":"",
+    "invoice_terms_due_date":        "2026-07-08",
+    "po_date":                       "2026-06-01",
+    "order_date":                    "2026-06-08",
+    "invoice_date":                  "2026-06-08",
+    "ship_date":                     "2026-06-07",
+    "deliver_date":                  "2026-06-10",
+    "delivery_date":                 "2026-06-10",
+    "departure_date":                "2026-06-09",
+    "run_date":                      "2026-06-08",
+    "actual_delivery_date":          "2026-06-10",
+    "actual_ship_date":              "2026-06-07",
+    "pick_up_date":                  "2026-06-09",
+    "pick_up_date_utc":              "2026-06-09",
+    "pick_up_time":                  "06:00",
+    "pick_up_time_utc":              "11:00",
+    "delivery_time":                 "14:00",
+    "delivery_time_utc":             "19:00",
+    "departure_time":                "06:00",
+    "departure_time_utc":            "11:00",
+    "actual_ship_time":              "08:30",
+    "ship_time":                     "08:30",
+    "time_stamp":                    "2026-06-08T10:30:00.000Z",
+    "creation_date":                 "2026-06-08T10:30:00.000Z",
+    "created_date":                  "2026-06-08T10:30:00.000Z",
+    "created_at":                    "2026-06-08T10:30:00.000Z",
+    "last_update_date":              "2026-06-08T10:30:00.000Z",
+    "receipt_date":                  "2026-06-10",
+    "huhtamaki_item_number":         "HUH-ITEM-001",
+    "product_number":                "HUH-ITEM-001",
+    "customer_item_number":          "CUST-ITEM-001",
+    "item_number":                   "HUH-ITEM-001",
+    "item_no":                       "HUH-ITEM-001",
+    "item":                          "HUH-ITEM-001",
+    "item_description":              "Molded Fiber Plate 10in",
+    "case_upc_14_digit":             "10012345678905",
+    "edi_unit_upc_14_digit":         "00012345678904",
+    "ucc_128_vase_pallet_code":      "00612345678901234560",
+    "sscc":                          "00612345678901234560",
+    "lot_number":                    "LOT-2026060801",
+    "lot_num_lotcontrol":            "Y",
+    "lpn":                           "LPN-001",
+    "licence_plate_number":          "LPN-001",
+    "locator":                       "A-01-01",
+    "sub_inventory":                 "FG",
+    "subinv":                        "FG",
+    "warehouse":                     "GB01",
+    "warehouse_code":                "GB01",
+    "huhtamaki_warehouse":           "GB01",
+    "huhtamaki_facility":            "GB01",
+    "org_code":                      "M1",
+    "fulfillmentorg_code":           "M1",
+    "oracle_ship_from_party_warehouse_code": "GB01",
+    "erp_from_org_code":             "M1",
+    "erp_dest_org_code":             "WM-DC-6094",
+    "site_id":                       "GB01",
+    "oic_instance_id":               "OIC-PROD3-001",
+    "quantity_ordered":              "500",
+    "quantity":                      "500",
+    "quantity_uom":                  "CA",
+    "unit_of_measure":               "CA",
+    "quantity_per_pack":             "50",
+    "quantity_shipped":              "500",
+    "remaining_qty":                 0,
+    "shipped_qty":                   500,
+    "load_plan_no":                  "LP-20260608-001",
+    "load_number":                   "LOAD-001",
+    "load_id":                       "LOAD-001",
+    "shipment_load_number":          "LOAD-001",
+    "shipment":                      "SHIP-20260607-001",
+    "ship_num":                      "SHIP-20260607-001",
+    "shipment_bill_of_lading":       "BOL-OB-001",
+    "bill_of_landing_number":        "BOL-OB-001",
+    "bill_of_lading":                "BOL-OB-001",
+    "pro_number":                    "PRO-20260607-001",
+    "pro_no":                        "PRO-20260607-001",
+    "shipment_pro_number":           "PRO-20260607-001",
+    "pro":                           "PRO-20260607-001",
+    "tracking_number":               "1Z999AA10123456784",
+    "shipment_tracking_number":      "1Z999AA10123456784",
+    "seal_number":                   "SEAL-001",
+    "shipment_seal_number":          "SEAL-001",
+    "trailer_number":                "TRL-001",
+    "shipment_equipment_number":     "TRL-001",
+    "equipment_number":              "TRL-001",
+    "equipment_description_code":    "TRL",
+    "line_number":                   "1",
+    "line_no":                       "1",
+    "ship_line_num":                 "1",
+    "ship_line_number":              "1",
+    "shipment_line_num":             "1",
+    "order_line_num":                "1",
+    "order_line_number":             "1",
+    "stop_no":                       "1",
+    "po_order_type":                 "NE",
+    "order_type":                    "SO",
+    "order_code":                    "SO",
+    "erp_order_type":                "SO",
+    "order_source":                  "EDI",
+    "source_transaction_system":     "ERP",
+    "source_transaction_id":         "SO-20260608-001",
+    "source":                        "ERP",
+    "source_system":                 "ERP",
+    "transaction_set_purpose_code":  "00",
+    "reference_identification":      "REF-001",
+    "routing_sequence_code":         "B",
+    "bill_to_party_code":            "HUH-NA",
+    "bill_to_party_name":            "Huhtamaki Americas",
+    "bill_to_party_duns":            "123456789",
+    "bill_to_party_gln":             "0614141000012",
+    "bill_to_party_address1":        "2400 Lakeview Pkwy",
+    "bill_to_party_address2":        "",
+    "bill_to_party_city":            "Alpharetta",
+    "bill_to_party_state":           "GA",
+    "bill_to_party_postal_code":     "30009",
+    "bill_to_party_country":         "US",
+    "bill_to_party_province":        "",
+    "ship_to_party_code":            "WM-DC-6094",
+    "ship_to_party_name":            "Walmart DC 6094",
+    "ship_to_party_duns":            "009876543",
+    "ship_to_party_gln":             "0614141000029",
+    "ship_to_party_address1":        "702 SW 8th St",
+    "ship_to_party_address2":        "",
+    "ship_to_party_city":            "Bentonville",
+    "ship_to_party_state":           "AR",
+    "ship_to_party_postal_code":     "72716",
+    "ship_to_party_country":         "US",
+    "ship_to_party_province":        "",
+    "ship_from_party_code":          "GB01",
+    "ship_from_party_name":          "Huhtamaki Green Bay",
+    "ship_from_party_duns":          "111222333",
+    "ship_from_party_gln":           "0614141000098",
+    "ship_from_party_address1":      "1919 S. Broadway",
+    "ship_from_party_address2":      "",
+    "ship_from_party_city":          "Green Bay",
+    "ship_from_party_state":         "WI",
+    "ship_from_party_postal_code":   "54304",
+    "ship_from_party_country":       "US",
+    "ship_from_party_province":      "",
+    "vendor_party_code":             "HUH-VENDOR-001",
+    "vendor_party_name":             "Huhtamaki Americas",
+    "vendor_party_duns":             "111222333",
+    "vendor_party_gln":              "0614141000098",
+    "vendor_party_address1":         "2400 Lakeview Pkwy",
+    "vendor_party_address2":         "",
+    "vendor_party_city":             "Alpharetta",
+    "vendor_party_state":            "GA",
+    "vendor_party_postal_code":      "30009",
+    "vendor_party_country":          "US",
+    "vendor_party_province":         "",
+    "vendor_number":                 "HUH-VENDOR-001",
+    "vendor_name":                   "Huhtamaki Americas",
+    "oracle_bill_to_party_customer_number":  "CUST-001",
+    "oracle_ship_to_party_customer_number":  "CUST-002",
+    "oracle_order_number":           "SO-20260608-001",
+    "huhtamaki_market":              "NA",
+    "business_unit":                 "NA",
+    "department_number":             "DEPT-001",
+    "merchandise_type_code":         "BULK",
+    "release_number":                "",
+    "appointment_number":            "APPT-001",
+    "total_amount":                  "6250.00",
+    "unit_price":                    "12.50",
+    "line_amount":                   "6250.00",
+    "shipping_charge":               "1425.00",
+    "total_cost":                    "1425.00",
+    "line_haul_rate":                "2.85",
+    "flatrate":                      0,
+    "freight_multiplier":            1.05,
+    "allowance_charge_code":         "C",
+    "method_of_handling":            "06",
+    "sac_amount":                    "150.00",
+    "percent":                       "0.00",
+    "description":                   "Freight Charge",
+    "note_text":                     "Handle with care",
+    "note_type":                     "GEN",
+    "shipment_gross_weight":         "5000",
+    "shipment_gross_weight_uom":     "LB",
+    "weight":                        "5000",
+    "weight_uom":                    "LB",
+    "load_weight":                   "5000",
+    "total_weight":                  "5000",
+    "shipment_gross_volume":         "480.5",
+    "shipment_gross_volume_uom":     "CF",
+    "cube_value":                    "480.5",
+    "cube_uom":                      "CF",
+    "total_distance":                "210",
+    "distance_uom":                  "MI",
+    "shipment_pallet_lading_quantity":"10",
+    "shipment_container_lading_quantity":"10",
+    "handling_unit":                 "10",
+    "handing_uom":                   "PLT",
+    "number_of_std_pallets":         "8",
+    "number_of_chep_pallets":        "2",
+    "chep_pallet_count":             "2",
+    "ltl_class":                     "85",
+    "package_type":                  "PLT",
+    "package_level":                 "P",
+    "over_under_ship_reason":        "",
+    "split_lpn_number":              "",
+    "shipment_method":               "TL",
+    "acknowledgement_type":          "AC",
+    "promised_ship_date":            "2026-06-09",
+    "quantity_acknowledged":         "500",
+    "quantity_uom_ack":              "CA",
+    "originating_city":              "Green Bay",
+    "originating_state":             "WI",
+    "originating_zip":               "54304",
+    "destination_city":              "Bentonville",
+    "destination_name":              "Walmart DC 6094",
+    "destination_state":             "AR",
+    "destination_zip":               "72716",
+    "file_id":                       5001,
+    "file_header_id":                5001,
+    "file_name":                     "RYDER_LP_20260608_001.txt",
+    "record_id":                     10001,
+    "record_key":                    "RK-20260608-001",
+    "unique_id":                     "AAABcDEFGHIJKLM",
+    "group_id":                      "GRP-001",
+    "total_count":                   1,
+    "total_quantity":                500,
+    "load_plan_count_per_file":      1,
+    "order_nos":                     "SO-20260608-001",
+    "order_nos_col":                 "SO-20260608-001",
+    "created_by":                    "OIC_INTG",
+    "receipt_number":                "RCV-001",
+    "attribute1":                    "",
+    "huhtamaki_item_ean":            "5012345678904",
+    "po_release_number":             "",
+    "integration_code":              "HUH_OB_856",
+    "integration_name":              "HUH OB ASN to Walmart 856",
+    "rice_object":                   "I",
+    "success_runs":                  48,
+    "fail_runs":                     2,
+    "total_runs":                    50,
+    "success_percentage":            96.0,
+    "difference":                    2,
+    "success_records":               97,
+    "fail_records":                  3,
+    "total_records":                 100,
+    "diffrence":                     3,
+    "success_percentage_rec":        97.0,
+    "tbd1":                          "",
+    "tbd2":                          "",
+    "tbd3":                          "",
+    "tbd4":                          "",
+    "tbd5":                          "",
+    "tbd6":                          "",
+    "tbd7":                          "",
+    "tbd8":                          "",
+    "tbd9":                          "",
+    "tbd10":                         "",
+    "date_tbd1":                     "",
+    "date_tbd2":                     "",
+    "date_tbd3":                     "",
+    "tbd_reference_number1":         "",
+    "tbd_reference_number2":         "",
+    "tbd_reference_number3":         "",
+    "tbd_reference_number4":         "",
+    "tbd1_from_party_address1":      "",
+    "tbd1_from_party_address2":      "",
+    "tbd1_from_party_city":          "",
+    "tbd1_from_party_country":       "",
+    "tbd1_from_party_duns":          "",
+    "tbd1_from_party_gln":           "",
+    "tbd1_from_party_name":          "",
+    "tbd1_from_party_postal_code":   "",
+    "tbd1_from_party_province":      "",
+    "tbd1_from_party_state":         "",
+    "tbd2_from_party_address1":      "",
+    "tbd2_from_party_address2":      "",
+    "tbd2_from_party_city":          "",
+    "tbd2_from_party_country":       "",
+    "tbd2_from_party_duns":          "",
+    "tbd2_from_party_gln":           "",
+    "tbd2_from_party_name":          "",
+    "tbd2_from_party_postal_code":   "",
+    "tbd2_from_party_province":      "",
+    "tbd2_from_party_state":         "",
+    "shipment_lading_tbd3":          "",
+    "intentionally_blank":           "",
+    "last_reason":                   "",
+    "attribute_char1":               "",
+    "attribute_char2":               "",
+    "attribute_char3":               "",
+    "attribute_char5":               "",
+    "so_header_id":                  200456,
+    "action_request_id":             100123,
+    "is_freight_flat":               "N",
+    "payment_terms":                 "NET30",
+    "transportation_terms":          "PREPAID",
+    "quantity_of_pallets_shipped":   "10",
+    "create_at":                     "Y",
+    "int_run_id":                    9001,
+    "error_dtl":                     "",
+    "requested_uom_code":            "CA",
+    "secondary_uom_code":            "EA",
+    "original_lpn_number":           "LPN-001",
+    "ship_date_hdr":                 "2026-06-07",
+    "transaction_date":              "2026-06-07",
+    "ucc_128":                       "00612345678901234560",
+    "number_of_pallets":             "10",
+    "seal_num":                      "SEAL-001",
+    "order_number_main":             "SO-20260608-001",
+    "shipment_method_pay":           "PP",
+    "message_out":                   "Update successful",
+    "status_out":                    "SUCCESS",
+    "updated_out":                   1,
+    "assign_status_put":             "ASSIGNED",
 }
 
-for name, data in samples_edi.items():
-    path = f"samples/HUH_edi/{name}.json"
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
-    print(f"  wrote {path}")
+def sample_value(field, ftype):
+    if field in STR_HINTS:
+        return STR_HINTS[field]
+    if ftype == "number":
+        return 0
+    # smart fallbacks on keywords in field name
+    f = field.lower()
+    if "date" in f:      return "2026-06-08"
+    if "time" in f:      return "08:00"
+    if "amount" in f or "price" in f or "cost" in f or "rate" in f or "charge" in f:
+        return "0.00"
+    if "qty" in f or "quantity" in f or "count" in f or "weight" in f or "volume" in f:
+        return "0"
+    if "number" in f or "_id" in f or "_no" in f:
+        return ""
+    if "status" in f:    return ""
+    if "code" in f:      return ""
+    if "name" in f:      return ""
+    if "address" in f:   return ""
+    return ""
 
-# ── HUH_ipc ──────────────────────────────────────────────────────────────────
+def build_sample(props, schemas, spec_name=""):
+    out = {}
+    for field, ref_or_schema in props.items():
+        if "$ref" in ref_or_schema:
+            sname = ref_or_schema["$ref"].split("/")[-1]
+            schema = schemas[sname]
+        else:
+            schema = ref_or_schema
+        ftype = schema.get("type", "string")
+        # array of items → wrap in items list
+        if ftype == "array":
+            inner_props = schema.get("items", {}).get("properties", {})
+            if inner_props:
+                out[field] = [build_sample(inner_props, schemas, spec_name)]
+            else:
+                out[field] = []
+        else:
+            v = sample_value(field, ftype)
+            if ftype == "number" and isinstance(v, str):
+                try: v = float(v) if "." in v else int(v)
+                except: v = 0
+            out[field] = v
+    return out
 
-samples_ipc = {
-    "errors_fallback": {
-        "created_date": TS,
-        "error_msg": "ORA-01403: No data found. Integration FALLBACK failed to locate source record for PO 4500012345.",
-        "po_number": "4500012345",
-        "record_key": "FALLBACK-ERR-001",
-        "status": "ERROR"
-    },
-    "errors_int1414": {
-        "created_date": TS,
-        "error_msg": "SAP IDOC posting failed: Material 1000001 not found in plant NA01.",
-        "po_number": "4500012346",
-        "record_key": "INT1414-ERR-001",
-        "status": "ERROR"
-    },
-    "errors_int1417": {
-        "created_date": TS,
-        "error_msg": "ORA-20001: Order 20260608001 already processed.",
-        "po_number": "4500099  ",
-        "record_key": 1417001,
-        "status": "DUPLICATE"
-    },
-    "errors_int4009": {
-        "created_date": TS,
-        "error_msg": "Connection timeout reaching Manhattan WMS endpoint after 30s. Retry 3/3 failed.",
-        "po_number": "4500012348",
-        "record_key": "INT4009-ERR-001",
-        "status": "TIMEOUT"
-    },
-    "errors_int4072": {
-        "created_date": TS,
-        "error_msg": "EDI 856 ASN rejected: SCAC code 'XYZZ' not found in carrier master.",
-        "po_number": "4500012349",
-        "record_key": "INT4072-ERR-001",
-        "status": "REJECTED"
-    },
-    "obruns": {
-        "difference": 2,
-        "fail_runs": 2,
-        "integration_code": "HUH_OB_856",
-        "integration_name": "HUH OB ASN to Walmart 856",
-        "rice_object": "I",
-        "success_percentage": 96.0,
-        "success_runs": 48,
-        "total_runs": 50
-    },
-    "recon": {
-        "diffrence": 3,
-        "fail_records": 3,
-        "integration_code": "HUH_OB_810",
-        "integration_name": "HUH OB Invoice to Walmart 810",
-        "rice_object": "I",
-        "success_percentage": 97.0,
-        "success_records": 97,
-        "total_records": 100
-    }
-}
+def path_to_filename(path):
+    return path.strip("/").replace("/", "_")
 
-for name, data in samples_ipc.items():
-    path = f"samples/HUH_ipc/{name}.json"
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
-    print(f"  wrote {path}")
+def process_spec(spec_file, out_dir):
+    with open(spec_file) as f:
+        spec = json.load(f)
+    schemas = spec["components"]["schemas"]
+    spec_name = spec_file.replace(".json", "")
+    count = 0
+    for path, methods in spec["paths"].items():
+        for method, op in methods.items():
+            if method not in ("get", "post", "put"):
+                continue
+            for code in ("200", "201"):
+                if code not in op.get("responses", {}):
+                    continue
+                content = op["responses"][code].get("content", {}).get("application/json")
+                if not content:
+                    continue
+                schema = content.get("schema", {})
+                props = schema.get("properties", {})
+                if not props:
+                    continue
+                sample = build_sample(props, schemas, spec_name)
+                fname = path_to_filename(path)
+                if method != "get":
+                    fname += f"_{method}"
+                out_path = f"{out_dir}/{fname}.json"
+                with open(out_path, "w") as f:
+                    json.dump(sample, f, indent=2)
+                content["example"] = sample
+                count += 1
+                print(f"  {method.upper()} {path}  →  {out_path}")
+    with open(spec_file, "w") as f:
+        json.dump(spec, f, indent=4)
+    print(f"  [{spec_file}] {count} samples written\n")
 
-# ── HUH_INTG_Search ──────────────────────────────────────────────────────────
-
-samples_intg = {
-    "Details": {
-        "items": [
-            {
-                "action_request_id": 100123,
-                "actual_delivery_date": "2026-06-10",
-                "assign_status": "ASSIGNED",
-                "business_unit": "NA",
-                "carrier": "RYDER",
-                "carrier_name": "Ryder Transportation",
-                "created_by": "OIC_INTG",
-                "creation_date": TS,
-                "cube_uom": "CF",
-                "cube_value": "480.5",
-                "delivery_date": "2026-06-10",
-                "delivery_date_utc": "2026-06-10",
-                "delivery_time": "14:00",
-                "delivery_time_utc": "19:00",
-                "departure_date": "2026-06-09",
-                "departure_date_utc": "2026-06-09",
-                "departure_time": "06:00",
-                "departure_time_utc": "11:00",
-                "destination_city": "Chicago",
-                "destination_name": "Walmart DC 6094",
-                "destination_state": "IL",
-                "destination_zip": "60601",
-                "distance_uom": "MI",
-                "erp_order_type": "SO",
-                "file_header_id": 5001,
-                "flatrate": 0,
-                "freight_multiplier": 1.05,
-                "fulfillmentorg_code": "M1",
-                "handing_uom": "PLT",
-                "handling_unit": "10",
-                "integration_code": "HUH_TMS_204",
-                "integration_run_id": 9001,
-                "intentionally_blank": "",
-                "int_message": "SUCCESS",
-                "is_freight_flat": "N",
-                "item_description": "Molded Fiber Plate 10in",
-                "item_no": "HUH-ITEM-001",
-                "last_reason": "",
-                "line_haul_rate": "2.85",
-                "line_no": "1",
-                "load_plan_no": "LP-20260608-001",
-                "load_status": "DISPATCHED",
-                "load_weight": "5000",
-                "ltl_class": "85",
-                "means_of_transportation": "TL",
-                "order_no": "SO-20260608-001",
-                "order_type": "SO",
-                "originating_city": "Green Bay",
-                "originating_state": "WI",
-                "originating_zip": "54301",
-                "payment_method": "PREPAID",
-                "pick_up_date": "2026-06-09",
-                "pick_up_date_utc": "2026-06-09",
-                "pick_up_time": "06:00",
-                "pick_up_time_utc": "11:00",
-                "pro_no": "PRO-20260607-001",
-                "quantity": "500",
-                "quantity_uom": "CA",
-                "shipment_status": "IN_TRANSIT",
-                "shipping_charge": "1425.00",
-                "ship_line_num": "1",
-                "ship_num": "SHIP-20260607-001",
-                "site_id": "GB01",
-                "source_transaction_id": "SO-20260608-001",
-                "source_transaction_system": "ERP",
-                "so_freight_status": "SENT",
-                "so_header_id": 200456,
-                "so_release_status": "RELEASED",
-                "so_submit_status": "SUBMITTED",
-                "so_update_status": "UPDATED",
-                "stop_no": "1",
-                "sub_inventory": "FG",
-                "time_stamp": TS,
-                "total_cost": "1425.00",
-                "total_distance": "210",
-                "to_number": "CUST-001",
-                "trailer_number": "TRL-001",
-                "transactioncategorycode": "OUTBOUND",
-                "warehouse": "GB01",
-                "weight_uom": "LB"
-            }
-        ]
-    },
-    "HUH_INTG_Search": {
-        "items": [
-            {
-                "assign_status": "ASSIGNED",
-                "erp_order_type": "SO",
-                "file_id": 5001,
-                "file_name": "RYDER_LP_20260608_001.txt",
-                "integration_run_id": 9001,
-                "int_messages": "SUCCESS",
-                "load_plan_count_per_file": 1,
-                "load_plan_no": "LP-20260608-001",
-                "order_nos": "SO-20260608-001",
-                "shipment_status": "IN_TRANSIT",
-                "so_freight_status": "SENT",
-                "so_release_status": "RELEASED",
-                "so_submit_status": "SUBMITTED",
-                "so_update_status": "UPDATED",
-                "total_count": 1,
-                "unique_id": "AAABcDEFGHIJKLM"
-            }
-        ]
-    },
-    "RyderLoadPlanData": {
-        "items": [
-            {
-                "delivery_date": "2026-06-10",
-                "delivery_time": "14:00",
-                "departure_date": "2026-06-09",
-                "departure_time": "06:00",
-                "file_header_id": 5001,
-                "integration_run_id": 9001,
-                "load_plan_no": "LP-20260608-001",
-                "order_no": "SO-20260608-001",
-                "pick_up_date": "2026-06-09",
-                "pick_up_time": "06:00"
-            }
-        ]
-    },
-    "ShipmentHeaderSearch": {
-        "items": [
-            {
-                "carrier": "RYDER",
-                "create_at": "Y",
-                "int_run_id": 9001,
-                "load_number": "LOAD-001",
-                "number_of_chep_pallets": "2",
-                "number_of_std_pallets": "8",
-                "order_number": "SO-20260608-001",
-                "org_code": "M1",
-                "seal_number": "SEAL-001",
-                "shipment": "SHIP-20260607-001",
-                "ship_date": "2026-06-07",
-                "source": "ERP",
-                "status": "CONFIRMED",
-                "total_count": 1,
-                "trailer_number": "TRL-001",
-                "transaction_date": "2026-06-07",
-                "ucc_128_vase_pallet_code": "00612345678901234560"
-            }
-        ]
-    },
-    "ShipmentLineSearch": {
-        "items": [
-            {
-                "error_dtl": "",
-                "item": "HUH-ITEM-001",
-                "licence_plate_number": "LPN-001",
-                "locator": "A-01-01",
-                "lot_number": "LOT-2026060801",
-                "order_line_num": "1",
-                "order_num": "SO-20260608-001",
-                "over_under_ship_reason": "",
-                "pro": "PRO-20260607-001",
-                "requested_uom_code": "CA",
-                "secondary_uom_code": "EA",
-                "shipment": "SHIP-20260607-001",
-                "shipment_method": "TL",
-                "shipped_qty": 500,
-                "ship_line_number": "1",
-                "source": "ERP",
-                "split_lpn_number": "",
-                "status": "CONFIRMED",
-                "subinv": "FG"
-            }
-        ]
-    },
-    "ShipmentSearch": {
-        "items": [
-            {
-                "actual_ship_date": "2026-06-07",
-                "actual_ship_time": "08:30",
-                "carrier": "RYDER",
-                "chep_pallet_count": "2",
-                "created_at": TS,
-                "err_msg": "",
-                "int_run_id": 9001,
-                "item": "HUH-ITEM-001",
-                "load_number": "LOAD-001",
-                "locator": "A-01-01",
-                "lot_number": "LOT-2026060801",
-                "number_of_std_pallets": "8",
-                "order_line_num": "1",
-                "order_number": "SO-20260608-001",
-                "org_code": "M1",
-                "original_lpn_number": "LPN-001",
-                "pro": "PRO-20260607-001",
-                "requested_uom_code": "CA",
-                "seal_number": "SEAL-001",
-                "secondary_uom_code": "EA",
-                "shipment": "SHIP-20260607-001",
-                "shipment_line_num": "1",
-                "shipment_method": "TL",
-                "shipped_qty": 500,
-                "ship_date": "2026-06-07",
-                "ship_time": "08:30",
-                "source_system": "ERP",
-                "split_lpn_number": "",
-                "status": "CONFIRMED",
-                "sub_inventory": "FG",
-                "total_count": 1,
-                "trailer_number": "TRL-001",
-                "ucc_128_vase_pallet_code": "00612345678901234560"
-            }
-        ]
-    },
-    "ShipmentStatuses": {
-        "items": [
-            {"status": "PENDING"},
-            {"status": "CONFIRMED"},
-            {"status": "IN_TRANSIT"},
-            {"status": "DELIVERED"},
-            {"status": "ERROR"}
-        ]
-    },
-    "TMSHeaderLineSearch": {
-        "items": [
-            {
-                "attribute1": "",
-                "carrier": "RYDER",
-                "creation_date": DATE,
-                "erp_dest_org_code": "WM-DC-6094",
-                "erp_from_org_code": "M1",
-                "error_message": "",
-                "file_name": "RYDER_TMS_20260608_001.txt",
-                "group_id": "GRP-001",
-                "integration_run_id": 9001,
-                "item": "HUH-ITEM-001",
-                "last_update_date": DATE,
-                "line_number": "1",
-                "load_number": "LOAD-001",
-                "lot_number": "LOT-2026060801",
-                "lot_num_lotcontrol": "Y",
-                "lpn": "LPN-001",
-                "oic_instance_id": "OIC-PROD3-001",
-                "order_code": "SO",
-                "order_number": "SO-20260608-001",
-                "quantity": "500",
-                "receipt_date": "2026-06-10",
-                "receipt_number": "RCV-001",
-                "record_id": 10001,
-                "remaining_qty": 0,
-                "status": "PROCESSED",
-                "total_count": 1,
-                "vendor_name": "Huhtamaki Americas",
-                "warehouse_code": "GB01"
-            }
-        ]
-    },
-    "TMSHeaderSearch": {
-        "items": [
-            {
-                "carrier": "RYDER",
-                "error_messages": "",
-                "file_id": 5001,
-                "file_name": "RYDER_TMS_20260608_001.txt",
-                "integration_run_id": 9001,
-                "load_number": "LOAD-001",
-                "oic_instance_id": "OIC-PROD3-001",
-                "receipt_date": "2026-06-10",
-                "status": "PROCESSED",
-                "total_count": 1,
-                "total_quantity": 500,
-                "vendor_name": "Huhtamaki Americas",
-                "warehouse_code": "GB01"
-            }
-        ]
-    },
-    "TMSLineSearch": {
-        "items": [
-            {
-                "carrier": "RYDER",
-                "error_message": "",
-                "item": "HUH-ITEM-001",
-                "load_number": "LOAD-001",
-                "lot_number": "LOT-2026060801",
-                "lpn": "LPN-001",
-                "order_code": "SO",
-                "quantity": "500",
-                "receipt_date": "2026-06-10",
-                "record_id": 10001,
-                "warehouse_code": "GB01"
-            }
-        ]
-    },
-    "TMSStatuses": {
-        "items": [
-            {"status": "PENDING"},
-            {"status": "PROCESSED"},
-            {"status": "ERROR"},
-            {"status": "REPROCESSED"}
-        ]
-    }
-}
-
-for name, data in samples_intg.items():
-    path = f"samples/HUH_INTG_Search/{name}.json"
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
-    print(f"  wrote {path}")
-
-print("\nDone.")
+process_spec("HUH_edi.json",         "samples/HUH_edi")
+process_spec("HUH_ipc.json",         "samples/HUH_ipc")
+process_spec("HUH_INTG_Search.json", "samples/HUH_INTG_Search")
+print("Done.")

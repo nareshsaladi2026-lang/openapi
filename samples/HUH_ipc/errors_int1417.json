@@ -1,7 +1,7 @@
 {
   "created_date": "2026-06-08T10:30:00.000Z",
-  "error_msg": "ORA-20001: Order 20260608001 already processed.",
-  "po_number": "4500099  ",
-  "record_key": 1417001,
-  "status": "DUPLICATE"
+  "error_msg": "",
+  "po_number": "4500012345",
+  "record_key": 0,
+  "status": "SUCCESS"
 }

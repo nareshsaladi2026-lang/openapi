@@ -1,7 +1,7 @@
 {
   "created_date": "2026-06-08T10:30:00.000Z",
-  "error_msg": "ORA-01403: No data found. Integration FALLBACK failed to locate source record for PO 4500012345.",
+  "error_msg": "",
   "po_number": "4500012345",
-  "record_key": "FALLBACK-ERR-001",
-  "status": "ERROR"
+  "record_key": "RK-20260608-001",
+  "status": "SUCCESS"
 }

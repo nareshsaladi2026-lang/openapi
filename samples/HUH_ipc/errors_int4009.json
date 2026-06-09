@@ -1,7 +1,7 @@
 {
   "created_date": "2026-06-08T10:30:00.000Z",
-  "error_msg": "Connection timeout reaching Manhattan WMS endpoint after 30s. Retry 3/3 failed.",
-  "po_number": "4500012348",
-  "record_key": "INT4009-ERR-001",
-  "status": "TIMEOUT"
+  "error_msg": "",
+  "po_number": "4500012345",
+  "record_key": "RK-20260608-001",
+  "status": "SUCCESS"
 }

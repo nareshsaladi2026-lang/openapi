@@ -29,7 +29,7 @@
       "ship_time": "08:30",
       "source_system": "ERP",
       "split_lpn_number": "",
-      "status": "CONFIRMED",
+      "status": "SUCCESS",
       "sub_inventory": "FG",
       "total_count": 1,
       "trailer_number": "TRL-001",

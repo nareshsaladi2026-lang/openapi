@@ -7,7 +7,7 @@
       "locator": "A-01-01",
       "lot_number": "LOT-2026060801",
       "order_line_num": "1",
-      "order_num": "SO-20260608-001",
+      "order_num": "",
       "over_under_ship_reason": "",
       "pro": "PRO-20260607-001",
       "requested_uom_code": "CA",
@@ -18,7 +18,7 @@
       "ship_line_number": "1",
       "source": "ERP",
       "split_lpn_number": "",
-      "status": "CONFIRMED",
+      "status": "SUCCESS",
       "subinv": "FG"
     }
   ]

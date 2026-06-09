@@ -1,12 +1,14 @@
 {
-  "batch": "BATCH-20260608-001",
-  "carrier_code": "RYDER",
-  "direction": "OB",
-  "global_unique_id": "EDI-204-20260608-001",
-  "interchange_control_id": "000001236",
-  "interchange_receiver_id": "RYDER",
+  "asn_number": "ASN-20260608-001",
+  "global_unique_id": "EDI-HUH-20260608-001",
+  "interchange_control_id": "000001234",
+  "interchange_receiver_id": "WALMART",
   "interchange_sender_id": "HUHTAMAKI",
-  "load_plan_no": "LP-20260608-001",
+  "invoice_number": "INV-20260608-001",
   "order_number": "SO-20260608-001",
-  "status": "SENT"
+  "po_number": "4500012345",
+  "run_id": "",
+  "source": "ERP",
+  "txn_date": "2026-06-08",
+  "van_trading_partner_name": "WALMART"
 }

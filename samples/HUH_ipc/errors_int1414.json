@@ -1,7 +1,7 @@
 {
   "created_date": "2026-06-08T10:30:00.000Z",
-  "error_msg": "SAP IDOC posting failed: Material 1000001 not found in plant NA01.",
-  "po_number": "4500012346",
-  "record_key": "INT1414-ERR-001",
-  "status": "ERROR"
+  "error_msg": "",
+  "po_number": "4500012345",
+  "record_key": "RK-20260608-001",
+  "status": "SUCCESS"
 }

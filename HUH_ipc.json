@@ -41,10 +41,10 @@
                                 },
                                 "example": {
                                     "created_date": "2026-06-08T10:30:00.000Z",
-                                    "error_msg": "ORA-01403: No data found. Integration FALLBACK failed to locate source record for PO 4500012345.",
+                                    "error_msg": "",
                                     "po_number": "4500012345",
-                                    "record_key": "FALLBACK-ERR-001",
-                                    "status": "ERROR"
+                                    "record_key": "RK-20260608-001",
+                                    "status": "SUCCESS"
                                 }
                             }
                         }
@@ -116,10 +116,10 @@
                                 },
                                 "example": {
                                     "created_date": "2026-06-08T10:30:00.000Z",
-                                    "error_msg": "SAP IDOC posting failed: Material 1000001 not found in plant NA01.",
-                                    "po_number": "4500012346",
-                                    "record_key": "INT1414-ERR-001",
-                                    "status": "ERROR"
+                                    "error_msg": "",
+                                    "po_number": "4500012345",
+                                    "record_key": "RK-20260608-001",
+                                    "status": "SUCCESS"
                                 }
                             }
                         }
@@ -183,10 +183,10 @@
                                 },
                                 "example": {
                                     "created_date": "2026-06-08T10:30:00.000Z",
-                                    "error_msg": "ORA-20001: Order 20260608001 already processed.",
-                                    "po_number": "4500099  ",
-                                    "record_key": 1417001,
-                                    "status": "DUPLICATE"
+                                    "error_msg": "",
+                                    "po_number": "4500012345",
+                                    "record_key": 0,
+                                    "status": "SUCCESS"
                                 }
                             }
                         }
@@ -250,10 +250,10 @@
                                 },
                                 "example": {
                                     "created_date": "2026-06-08T10:30:00.000Z",
-                                    "error_msg": "Connection timeout reaching Manhattan WMS endpoint after 30s. Retry 3/3 failed.",
-                                    "po_number": "4500012348",
-                                    "record_key": "INT4009-ERR-001",
-                                    "status": "TIMEOUT"
+                                    "error_msg": "",
+                                    "po_number": "4500012345",
+                                    "record_key": "RK-20260608-001",
+                                    "status": "SUCCESS"
                                 }
                             }
                         }
@@ -317,10 +317,10 @@
                                 },
                                 "example": {
                                     "created_date": "2026-06-08T10:30:00.000Z",
-                                    "error_msg": "EDI 856 ASN rejected: SCAC code 'XYZZ' not found in carrier master.",
-                                    "po_number": "4500012349",
-                                    "record_key": "INT4072-ERR-001",
-                                    "status": "REJECTED"
+                                    "error_msg": "",
+                                    "po_number": "4500012345",
+                                    "record_key": "RK-20260608-001",
+                                    "status": "SUCCESS"
                                 }
                             }
                         }
@@ -465,10 +465,10 @@
                                 "example": {
                                     "diffrence": 3,
                                     "fail_records": 3,
-                                    "integration_code": "HUH_OB_810",
-                                    "integration_name": "HUH OB Invoice to Walmart 810",
+                                    "integration_code": "HUH_OB_856",
+                                    "integration_name": "HUH OB ASN to Walmart 856",
                                     "rice_object": "I",
-                                    "success_percentage": 97.0,
+                                    "success_percentage": 96.0,
                                     "success_records": 97,
                                     "total_records": 100
                                 }

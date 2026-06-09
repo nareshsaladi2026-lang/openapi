@@ -1,8 +1,16 @@
 {
+  "action_code": "",
   "batch": "BATCH-20260608-001",
-  "global_unique_id": "EDI-204-20260608-001",
-  "load_plan_no": "LP-20260608-001",
-  "note_text": "Fragile - handle with care",
-  "note_type": "GEN",
-  "order_number": "SO-20260608-001"
+  "customer_po_number": "4500012345",
+  "direction": "OB",
+  "global_unique_id": "EDI-HUH-20260608-001",
+  "integration_run_id": 9001,
+  "interchange_control_id": "000001234",
+  "interchange_receiver_id": "WALMART",
+  "interchange_sender_id": "HUHTAMAKI",
+  "note_description": "",
+  "note_reference_type": "",
+  "note_sequence": "",
+  "order_number": "SO-20260608-001",
+  "van_trading_partner_name": "WALMART"
 }

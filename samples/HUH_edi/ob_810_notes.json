@@ -1,7 +1,22 @@
 {
-  "batch": "BATCH-INV-20260608-001",
-  "global_unique_id": "EDI-810-20260608-001",
+  "batch": "BATCH-20260608-001",
+  "global_unique_id": "EDI-HUH-20260608-001",
+  "integration_run_id": 9001,
+  "interchange_control_id": "000001234",
+  "interchange_receiver_id": "WALMART",
+  "interchange_sender_id": "HUHTAMAKI",
   "invoice_number": "INV-20260608-001",
-  "note_text": "Thank you for your business",
-  "note_type": "GEN"
+  "note": "",
+  "note_sequence": "",
+  "oracle_order_number": "SO-20260608-001",
+  "po_level": "",
+  "po_note_line_number": "",
+  "po_number": "4500012345",
+  "release_number": "",
+  "tbd1": "",
+  "tbd2": "",
+  "tbd3": "",
+  "tbd4": "",
+  "tbd5": "",
+  "van_trading_partner_name": "WALMART"
 }

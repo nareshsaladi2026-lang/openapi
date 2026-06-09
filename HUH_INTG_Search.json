@@ -285,17 +285,17 @@
                                             "cube_uom": "CF",
                                             "cube_value": "480.5",
                                             "delivery_date": "2026-06-10",
-                                            "delivery_date_utc": "2026-06-10",
+                                            "delivery_date_utc": "2026-06-08",
                                             "delivery_time": "14:00",
                                             "delivery_time_utc": "19:00",
                                             "departure_date": "2026-06-09",
-                                            "departure_date_utc": "2026-06-09",
+                                            "departure_date_utc": "2026-06-08",
                                             "departure_time": "06:00",
                                             "departure_time_utc": "11:00",
-                                            "destination_city": "Chicago",
+                                            "destination_city": "Bentonville",
                                             "destination_name": "Walmart DC 6094",
-                                            "destination_state": "IL",
-                                            "destination_zip": "60601",
+                                            "destination_state": "AR",
+                                            "destination_zip": "72716",
                                             "distance_uom": "MI",
                                             "erp_order_type": "SO",
                                             "file_header_id": 5001,
@@ -304,7 +304,7 @@
                                             "fulfillmentorg_code": "M1",
                                             "handing_uom": "PLT",
                                             "handling_unit": "10",
-                                            "integration_code": "HUH_TMS_204",
+                                            "integration_code": "HUH_OB_856",
                                             "integration_run_id": 9001,
                                             "intentionally_blank": "",
                                             "int_message": "SUCCESS",
@@ -319,11 +319,11 @@
                                             "load_weight": "5000",
                                             "ltl_class": "85",
                                             "means_of_transportation": "TL",
-                                            "order_no": "SO-20260608-001",
+                                            "order_no": "",
                                             "order_type": "SO",
                                             "originating_city": "Green Bay",
                                             "originating_state": "WI",
-                                            "originating_zip": "54301",
+                                            "originating_zip": "54304",
                                             "payment_method": "PREPAID",
                                             "pick_up_date": "2026-06-09",
                                             "pick_up_date_utc": "2026-06-09",
@@ -349,9 +349,9 @@
                                             "time_stamp": "2026-06-08T10:30:00.000Z",
                                             "total_cost": "1425.00",
                                             "total_distance": "210",
-                                            "to_number": "CUST-001",
+                                            "to_number": "",
                                             "trailer_number": "TRL-001",
-                                            "transactioncategorycode": "OUTBOUND",
+                                            "transactioncategorycode": "",
                                             "warehouse": "GB01",
                                             "weight_uom": "LB"
                                         }
@@ -644,7 +644,7 @@
                                             "file_header_id": 5001,
                                             "integration_run_id": 9001,
                                             "load_plan_no": "LP-20260608-001",
-                                            "order_no": "SO-20260608-001",
+                                            "order_no": "",
                                             "pick_up_date": "2026-06-09",
                                             "pick_up_time": "06:00"
                                         }
@@ -830,7 +830,7 @@
                                             "shipment": "SHIP-20260607-001",
                                             "ship_date": "2026-06-07",
                                             "source": "ERP",
-                                            "status": "CONFIRMED",
+                                            "status": "SUCCESS",
                                             "total_count": 1,
                                             "trailer_number": "TRL-001",
                                             "transaction_date": "2026-06-07",
@@ -981,7 +981,7 @@
                                             "locator": "A-01-01",
                                             "lot_number": "LOT-2026060801",
                                             "order_line_num": "1",
-                                            "order_num": "SO-20260608-001",
+                                            "order_num": "",
                                             "over_under_ship_reason": "",
                                             "pro": "PRO-20260607-001",
                                             "requested_uom_code": "CA",
@@ -992,7 +992,7 @@
                                             "ship_line_number": "1",
                                             "source": "ERP",
                                             "split_lpn_number": "",
-                                            "status": "CONFIRMED",
+                                            "status": "SUCCESS",
                                             "subinv": "FG"
                                         }
                                     ]
@@ -1042,6 +1042,11 @@
                                             "type": "integer"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "message_out": "Update successful",
+                                    "status_out": "SUCCESS",
+                                    "updated_out": 1
                                 }
                             }
                         }
@@ -1063,6 +1068,11 @@
                                             "type": "integer"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "message_out": "Update successful",
+                                    "status_out": "SUCCESS",
+                                    "updated_out": 1
                                 }
                             }
                         }
@@ -1231,7 +1241,7 @@
                                             "ship_time": "08:30",
                                             "source_system": "ERP",
                                             "split_lpn_number": "",
-                                            "status": "CONFIRMED",
+                                            "status": "SUCCESS",
                                             "sub_inventory": "FG",
                                             "total_count": 1,
                                             "trailer_number": "TRL-001",
@@ -1330,19 +1340,7 @@
                                 "example": {
                                     "items": [
                                         {
-                                            "status": "PENDING"
-                                        },
-                                        {
-                                            "status": "CONFIRMED"
-                                        },
-                                        {
-                                            "status": "IN_TRANSIT"
-                                        },
-                                        {
-                                            "status": "DELIVERED"
-                                        },
-                                        {
-                                            "status": "ERROR"
+                                            "status": "SUCCESS"
                                         }
                                     ]
                                 }
@@ -1463,15 +1461,15 @@
                                         {
                                             "attribute1": "",
                                             "carrier": "RYDER",
-                                            "creation_date": "2026-06-08T00:00:00.000Z",
+                                            "creation_date": "2026-06-08T10:30:00.000Z",
                                             "erp_dest_org_code": "WM-DC-6094",
                                             "erp_from_org_code": "M1",
                                             "error_message": "",
-                                            "file_name": "RYDER_TMS_20260608_001.txt",
+                                            "file_name": "RYDER_LP_20260608_001.txt",
                                             "group_id": "GRP-001",
                                             "integration_run_id": 9001,
                                             "item": "HUH-ITEM-001",
-                                            "last_update_date": "2026-06-08T00:00:00.000Z",
+                                            "last_update_date": "2026-06-08T10:30:00.000Z",
                                             "line_number": "1",
                                             "load_number": "LOAD-001",
                                             "lot_number": "LOT-2026060801",
@@ -1485,7 +1483,7 @@
                                             "receipt_number": "RCV-001",
                                             "record_id": 10001,
                                             "remaining_qty": 0,
-                                            "status": "PROCESSED",
+                                            "status": "SUCCESS",
                                             "total_count": 1,
                                             "vendor_name": "Huhtamaki Americas",
                                             "warehouse_code": "GB01"
@@ -1622,12 +1620,12 @@
                                             "carrier": "RYDER",
                                             "error_messages": "",
                                             "file_id": 5001,
-                                            "file_name": "RYDER_TMS_20260608_001.txt",
+                                            "file_name": "RYDER_LP_20260608_001.txt",
                                             "integration_run_id": 9001,
                                             "load_number": "LOAD-001",
                                             "oic_instance_id": "OIC-PROD3-001",
                                             "receipt_date": "2026-06-10",
-                                            "status": "PROCESSED",
+                                            "status": "SUCCESS",
                                             "total_count": 1,
                                             "total_quantity": 500,
                                             "vendor_name": "Huhtamaki Americas",
@@ -1821,16 +1819,7 @@
                                 "example": {
                                     "items": [
                                         {
-                                            "status": "PENDING"
-                                        },
-                                        {
-                                            "status": "PROCESSED"
-                                        },
-                                        {
-                                            "status": "ERROR"
-                                        },
-                                        {
-                                            "status": "REPROCESSED"
+                                            "status": "SUCCESS"
                                         }
                                     ]
                                 }
