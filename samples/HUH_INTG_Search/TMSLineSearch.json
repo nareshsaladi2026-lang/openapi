@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "carrier": "RYDER",
+      "error_message": "",
+      "item": "HUH-ITEM-001",
+      "load_number": "LOAD-001",
+      "lot_number": "LOT-2026060801",
+      "lpn": "LPN-001",
+      "order_code": "SO",
+      "quantity": "500",
+      "receipt_date": "2026-06-10",
+      "record_id": 10001,
+      "warehouse_code": "GB01"
+    }
+  ]
+}

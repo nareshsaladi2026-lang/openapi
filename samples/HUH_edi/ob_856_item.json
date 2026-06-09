@@ -1,0 +1,14 @@
+{
+  "case_upc_14_digit": "10012345678905",
+  "global_unique_id": "EDI-856-20260608-001",
+  "item_description": "Molded Fiber Plate 10in",
+  "item_number": "HUH-ITEM-001",
+  "line_number": "1",
+  "lot_number": "LOT-2026060801",
+  "order_line_number": "1",
+  "order_number": "SO-20260608-001",
+  "po_number": "4500012345",
+  "quantity_shipped": "500",
+  "quantity_uom": "CA",
+  "unit_price": "12.50"
+}

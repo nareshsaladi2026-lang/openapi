@@ -1,0 +1,10 @@
+{
+  "difference": 2,
+  "fail_runs": 2,
+  "integration_code": "HUH_OB_856",
+  "integration_name": "HUH OB ASN to Walmart 856",
+  "rice_object": "I",
+  "success_percentage": 96.0,
+  "success_runs": 48,
+  "total_runs": 50
+}

@@ -1,0 +1,12 @@
+{
+  "acknowledgement_type": "AC",
+  "global_unique_id": "EDI-855-20260608-001",
+  "interchange_control_id": "000001238",
+  "item_number": "HUH-ITEM-001",
+  "line_number": "1",
+  "order_number": "SO-20260608-001",
+  "po_number": "4500012345",
+  "promised_ship_date": "2026-06-09",
+  "quantity_acknowledged": "500",
+  "quantity_uom": "CA"
+}

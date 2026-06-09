@@ -1,0 +1,10 @@
+{
+  "diffrence": 3,
+  "fail_records": 3,
+  "integration_code": "HUH_OB_810",
+  "integration_name": "HUH OB Invoice to Walmart 810",
+  "rice_object": "I",
+  "success_percentage": 97.0,
+  "success_records": 97,
+  "total_records": 100
+}

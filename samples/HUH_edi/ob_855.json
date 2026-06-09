@@ -1,0 +1,11 @@
+{
+  "asn_number": "ASN-20260608-001",
+  "global_unique_id": "EDI-855-20260608-001",
+  "interchange_control_id": "000001238",
+  "interchange_receiver_id": "WALMART",
+  "interchange_sender_id": "HUHTAMAKI",
+  "invoice_number": "INV-20260608-001",
+  "order_number": "SO-20260608-001",
+  "po_number": "4500012345",
+  "status": "SENT"
+}

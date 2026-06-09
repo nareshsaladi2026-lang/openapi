@@ -1,0 +1,13 @@
+{
+  "batch": "BATCH-INV-20260608-001",
+  "direction": "OB",
+  "global_unique_id": "EDI-810-20260608-001",
+  "interchange_control_id": "000001237",
+  "interchange_receiver_id": "WALMART",
+  "interchange_sender_id": "HUHTAMAKI",
+  "invoice_number": "INV-20260608-001",
+  "order_number": "SO-20260608-001",
+  "po_number": "4500012345",
+  "status": "SENT",
+  "total_amount": "6250.00"
+}

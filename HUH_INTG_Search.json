@@ -270,6 +270,92 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "action_request_id": 100123,
+                                            "actual_delivery_date": "2026-06-10",
+                                            "assign_status": "ASSIGNED",
+                                            "business_unit": "NA",
+                                            "carrier": "RYDER",
+                                            "carrier_name": "Ryder Transportation",
+                                            "created_by": "OIC_INTG",
+                                            "creation_date": "2026-06-08T10:30:00.000Z",
+                                            "cube_uom": "CF",
+                                            "cube_value": "480.5",
+                                            "delivery_date": "2026-06-10",
+                                            "delivery_date_utc": "2026-06-10",
+                                            "delivery_time": "14:00",
+                                            "delivery_time_utc": "19:00",
+                                            "departure_date": "2026-06-09",
+                                            "departure_date_utc": "2026-06-09",
+                                            "departure_time": "06:00",
+                                            "departure_time_utc": "11:00",
+                                            "destination_city": "Chicago",
+                                            "destination_name": "Walmart DC 6094",
+                                            "destination_state": "IL",
+                                            "destination_zip": "60601",
+                                            "distance_uom": "MI",
+                                            "erp_order_type": "SO",
+                                            "file_header_id": 5001,
+                                            "flatrate": 0,
+                                            "freight_multiplier": 1.05,
+                                            "fulfillmentorg_code": "M1",
+                                            "handing_uom": "PLT",
+                                            "handling_unit": "10",
+                                            "integration_code": "HUH_TMS_204",
+                                            "integration_run_id": 9001,
+                                            "intentionally_blank": "",
+                                            "int_message": "SUCCESS",
+                                            "is_freight_flat": "N",
+                                            "item_description": "Molded Fiber Plate 10in",
+                                            "item_no": "HUH-ITEM-001",
+                                            "last_reason": "",
+                                            "line_haul_rate": "2.85",
+                                            "line_no": "1",
+                                            "load_plan_no": "LP-20260608-001",
+                                            "load_status": "DISPATCHED",
+                                            "load_weight": "5000",
+                                            "ltl_class": "85",
+                                            "means_of_transportation": "TL",
+                                            "order_no": "SO-20260608-001",
+                                            "order_type": "SO",
+                                            "originating_city": "Green Bay",
+                                            "originating_state": "WI",
+                                            "originating_zip": "54301",
+                                            "payment_method": "PREPAID",
+                                            "pick_up_date": "2026-06-09",
+                                            "pick_up_date_utc": "2026-06-09",
+                                            "pick_up_time": "06:00",
+                                            "pick_up_time_utc": "11:00",
+                                            "pro_no": "PRO-20260607-001",
+                                            "quantity": "500",
+                                            "quantity_uom": "CA",
+                                            "shipment_status": "IN_TRANSIT",
+                                            "shipping_charge": "1425.00",
+                                            "ship_line_num": "1",
+                                            "ship_num": "SHIP-20260607-001",
+                                            "site_id": "GB01",
+                                            "source_transaction_id": "SO-20260608-001",
+                                            "source_transaction_system": "ERP",
+                                            "so_freight_status": "SENT",
+                                            "so_header_id": 200456,
+                                            "so_release_status": "RELEASED",
+                                            "so_submit_status": "SUBMITTED",
+                                            "so_update_status": "UPDATED",
+                                            "stop_no": "1",
+                                            "sub_inventory": "FG",
+                                            "time_stamp": "2026-06-08T10:30:00.000Z",
+                                            "total_cost": "1425.00",
+                                            "total_distance": "210",
+                                            "to_number": "CUST-001",
+                                            "trailer_number": "TRL-001",
+                                            "transactioncategorycode": "OUTBOUND",
+                                            "warehouse": "GB01",
+                                            "weight_uom": "LB"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -355,6 +441,28 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "assign_status": "ASSIGNED",
+                                            "erp_order_type": "SO",
+                                            "file_id": 5001,
+                                            "file_name": "RYDER_LP_20260608_001.txt",
+                                            "integration_run_id": 9001,
+                                            "int_messages": "SUCCESS",
+                                            "load_plan_count_per_file": 1,
+                                            "load_plan_no": "LP-20260608-001",
+                                            "order_nos": "SO-20260608-001",
+                                            "shipment_status": "IN_TRANSIT",
+                                            "so_freight_status": "SENT",
+                                            "so_release_status": "RELEASED",
+                                            "so_submit_status": "SUBMITTED",
+                                            "so_update_status": "UPDATED",
+                                            "total_count": 1,
+                                            "unique_id": "AAABcDEFGHIJKLM"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -525,6 +633,22 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "delivery_date": "2026-06-10",
+                                            "delivery_time": "14:00",
+                                            "departure_date": "2026-06-09",
+                                            "departure_time": "06:00",
+                                            "file_header_id": 5001,
+                                            "integration_run_id": 9001,
+                                            "load_plan_no": "LP-20260608-001",
+                                            "order_no": "SO-20260608-001",
+                                            "pick_up_date": "2026-06-09",
+                                            "pick_up_time": "06:00"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -559,6 +683,22 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {}
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "delivery_date": "2026-06-10",
+                                            "delivery_time": "14:00",
+                                            "departure_date": "2026-06-09",
+                                            "departure_time": "06:00",
+                                            "file_header_id": 5001,
+                                            "integration_run_id": 9001,
+                                            "load_plan_no": "LP-20260608-001",
+                                            "order_no": "SO-20260608-001",
+                                            "pick_up_date": "2026-06-09",
+                                            "pick_up_time": "06:00"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -570,6 +710,22 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {}
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "delivery_date": "2026-06-10",
+                                            "delivery_time": "14:00",
+                                            "departure_date": "2026-06-09",
+                                            "departure_time": "06:00",
+                                            "file_header_id": 5001,
+                                            "integration_run_id": 9001,
+                                            "load_plan_no": "LP-20260608-001",
+                                            "order_no": "SO-20260608-001",
+                                            "pick_up_date": "2026-06-09",
+                                            "pick_up_time": "06:00"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -658,6 +814,29 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "carrier": "RYDER",
+                                            "create_at": "Y",
+                                            "int_run_id": 9001,
+                                            "load_number": "LOAD-001",
+                                            "number_of_chep_pallets": "2",
+                                            "number_of_std_pallets": "8",
+                                            "order_number": "SO-20260608-001",
+                                            "org_code": "M1",
+                                            "seal_number": "SEAL-001",
+                                            "shipment": "SHIP-20260607-001",
+                                            "ship_date": "2026-06-07",
+                                            "source": "ERP",
+                                            "status": "CONFIRMED",
+                                            "total_count": 1,
+                                            "trailer_number": "TRL-001",
+                                            "transaction_date": "2026-06-07",
+                                            "ucc_128_vase_pallet_code": "00612345678901234560"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -792,6 +971,31 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "error_dtl": "",
+                                            "item": "HUH-ITEM-001",
+                                            "licence_plate_number": "LPN-001",
+                                            "locator": "A-01-01",
+                                            "lot_number": "LOT-2026060801",
+                                            "order_line_num": "1",
+                                            "order_num": "SO-20260608-001",
+                                            "over_under_ship_reason": "",
+                                            "pro": "PRO-20260607-001",
+                                            "requested_uom_code": "CA",
+                                            "secondary_uom_code": "EA",
+                                            "shipment": "SHIP-20260607-001",
+                                            "shipment_method": "TL",
+                                            "shipped_qty": 500,
+                                            "ship_line_number": "1",
+                                            "source": "ERP",
+                                            "split_lpn_number": "",
+                                            "status": "CONFIRMED",
+                                            "subinv": "FG"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -995,6 +1199,45 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "actual_ship_date": "2026-06-07",
+                                            "actual_ship_time": "08:30",
+                                            "carrier": "RYDER",
+                                            "chep_pallet_count": "2",
+                                            "created_at": "2026-06-08T10:30:00.000Z",
+                                            "err_msg": "",
+                                            "int_run_id": 9001,
+                                            "item": "HUH-ITEM-001",
+                                            "load_number": "LOAD-001",
+                                            "locator": "A-01-01",
+                                            "lot_number": "LOT-2026060801",
+                                            "number_of_std_pallets": "8",
+                                            "order_line_num": "1",
+                                            "order_number": "SO-20260608-001",
+                                            "org_code": "M1",
+                                            "original_lpn_number": "LPN-001",
+                                            "pro": "PRO-20260607-001",
+                                            "requested_uom_code": "CA",
+                                            "seal_number": "SEAL-001",
+                                            "secondary_uom_code": "EA",
+                                            "shipment": "SHIP-20260607-001",
+                                            "shipment_line_num": "1",
+                                            "shipment_method": "TL",
+                                            "shipped_qty": 500,
+                                            "ship_date": "2026-06-07",
+                                            "ship_time": "08:30",
+                                            "source_system": "ERP",
+                                            "split_lpn_number": "",
+                                            "status": "CONFIRMED",
+                                            "sub_inventory": "FG",
+                                            "total_count": 1,
+                                            "trailer_number": "TRL-001",
+                                            "ucc_128_vase_pallet_code": "00612345678901234560"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -1083,6 +1326,25 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "status": "PENDING"
+                                        },
+                                        {
+                                            "status": "CONFIRMED"
+                                        },
+                                        {
+                                            "status": "IN_TRANSIT"
+                                        },
+                                        {
+                                            "status": "DELIVERED"
+                                        },
+                                        {
+                                            "status": "ERROR"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -1195,6 +1457,40 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "attribute1": "",
+                                            "carrier": "RYDER",
+                                            "creation_date": "2026-06-08T00:00:00.000Z",
+                                            "erp_dest_org_code": "WM-DC-6094",
+                                            "erp_from_org_code": "M1",
+                                            "error_message": "",
+                                            "file_name": "RYDER_TMS_20260608_001.txt",
+                                            "group_id": "GRP-001",
+                                            "integration_run_id": 9001,
+                                            "item": "HUH-ITEM-001",
+                                            "last_update_date": "2026-06-08T00:00:00.000Z",
+                                            "line_number": "1",
+                                            "load_number": "LOAD-001",
+                                            "lot_number": "LOT-2026060801",
+                                            "lot_num_lotcontrol": "Y",
+                                            "lpn": "LPN-001",
+                                            "oic_instance_id": "OIC-PROD3-001",
+                                            "order_code": "SO",
+                                            "order_number": "SO-20260608-001",
+                                            "quantity": "500",
+                                            "receipt_date": "2026-06-10",
+                                            "receipt_number": "RCV-001",
+                                            "record_id": 10001,
+                                            "remaining_qty": 0,
+                                            "status": "PROCESSED",
+                                            "total_count": 1,
+                                            "vendor_name": "Huhtamaki Americas",
+                                            "warehouse_code": "GB01"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -1319,6 +1615,25 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "carrier": "RYDER",
+                                            "error_messages": "",
+                                            "file_id": 5001,
+                                            "file_name": "RYDER_TMS_20260608_001.txt",
+                                            "integration_run_id": 9001,
+                                            "load_number": "LOAD-001",
+                                            "oic_instance_id": "OIC-PROD3-001",
+                                            "receipt_date": "2026-06-10",
+                                            "status": "PROCESSED",
+                                            "total_count": 1,
+                                            "total_quantity": 500,
+                                            "vendor_name": "Huhtamaki Americas",
+                                            "warehouse_code": "GB01"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -1437,6 +1752,23 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "carrier": "RYDER",
+                                            "error_message": "",
+                                            "item": "HUH-ITEM-001",
+                                            "load_number": "LOAD-001",
+                                            "lot_number": "LOT-2026060801",
+                                            "lpn": "LPN-001",
+                                            "order_code": "SO",
+                                            "quantity": "500",
+                                            "receipt_date": "2026-06-10",
+                                            "record_id": 10001,
+                                            "warehouse_code": "GB01"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -1485,6 +1817,22 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "items": [
+                                        {
+                                            "status": "PENDING"
+                                        },
+                                        {
+                                            "status": "PROCESSED"
+                                        },
+                                        {
+                                            "status": "ERROR"
+                                        },
+                                        {
+                                            "status": "REPROCESSED"
+                                        }
+                                    ]
                                 }
                             }
                         }

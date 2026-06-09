@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "error_dtl": "",
+      "item": "HUH-ITEM-001",
+      "licence_plate_number": "LPN-001",
+      "locator": "A-01-01",
+      "lot_number": "LOT-2026060801",
+      "order_line_num": "1",
+      "order_num": "SO-20260608-001",
+      "over_under_ship_reason": "",
+      "pro": "PRO-20260607-001",
+      "requested_uom_code": "CA",
+      "secondary_uom_code": "EA",
+      "shipment": "SHIP-20260607-001",
+      "shipment_method": "TL",
+      "shipped_qty": 500,
+      "ship_line_number": "1",
+      "source": "ERP",
+      "split_lpn_number": "",
+      "status": "CONFIRMED",
+      "subinv": "FG"
+    }
+  ]
+}

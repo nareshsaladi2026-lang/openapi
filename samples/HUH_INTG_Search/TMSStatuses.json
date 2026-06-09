@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "status": "PENDING"
+    },
+    {
+      "status": "PROCESSED"
+    },
+    {
+      "status": "ERROR"
+    },
+    {
+      "status": "REPROCESSED"
+    }
+  ]
+}

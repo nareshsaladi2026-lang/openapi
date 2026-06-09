@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "carrier": "RYDER",
+      "create_at": "Y",
+      "int_run_id": 9001,
+      "load_number": "LOAD-001",
+      "number_of_chep_pallets": "2",
+      "number_of_std_pallets": "8",
+      "order_number": "SO-20260608-001",
+      "org_code": "M1",
+      "seal_number": "SEAL-001",
+      "shipment": "SHIP-20260607-001",
+      "ship_date": "2026-06-07",
+      "source": "ERP",
+      "status": "CONFIRMED",
+      "total_count": 1,
+      "trailer_number": "TRL-001",
+      "transaction_date": "2026-06-07",
+      "ucc_128_vase_pallet_code": "00612345678901234560"
+    }
+  ]
+}

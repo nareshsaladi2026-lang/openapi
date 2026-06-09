@@ -1,0 +1,14 @@
+{
+  "batch": "BATCH-20260608-001",
+  "global_unique_id": "EDI-204-20260608-001",
+  "item_description": "Molded Fiber Plate 10in",
+  "item_number": "HUH-ITEM-001",
+  "line_number": "1",
+  "load_plan_no": "LP-20260608-001",
+  "order_number": "SO-20260608-001",
+  "quantity": "500",
+  "quantity_uom": "CA",
+  "upc": "10012345678905",
+  "weight": "2500",
+  "weight_uom": "LB"
+}

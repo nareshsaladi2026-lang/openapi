@@ -1,0 +1,12 @@
+{
+  "batch": "BATCH-ASN-20260608-001",
+  "direction": "OB",
+  "global_unique_id": "EDI-856-20260608-001",
+  "interchange_control_id": "000001239",
+  "interchange_receiver_id": "WALMART",
+  "interchange_sender_id": "HUHTAMAKI",
+  "order_number": "SO-20260608-001",
+  "po_number": "4500012345",
+  "shipment_id": "SHIP-20260607-001",
+  "status": "SENT"
+}

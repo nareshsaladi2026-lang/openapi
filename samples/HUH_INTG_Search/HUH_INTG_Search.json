@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "assign_status": "ASSIGNED",
+      "erp_order_type": "SO",
+      "file_id": 5001,
+      "file_name": "RYDER_LP_20260608_001.txt",
+      "integration_run_id": 9001,
+      "int_messages": "SUCCESS",
+      "load_plan_count_per_file": 1,
+      "load_plan_no": "LP-20260608-001",
+      "order_nos": "SO-20260608-001",
+      "shipment_status": "IN_TRANSIT",
+      "so_freight_status": "SENT",
+      "so_release_status": "RELEASED",
+      "so_submit_status": "SUBMITTED",
+      "so_update_status": "UPDATED",
+      "total_count": 1,
+      "unique_id": "AAABcDEFGHIJKLM"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "appointment_number": "APPT-001",
+  "date_tbd1": "2026-06-09",
+  "date_tbd2": "",
+  "date_tbd3": "",
+  "delivery_date": "2026-06-10",
+  "department_number": "DEPT-001",
+  "direction": "OB",
+  "global_unique_id": "EDI-856-20260608-001",
+  "interchange_control_id": "000001239",
+  "interchange_receiver_id": "WALMART",
+  "interchange_sender_id": "HUHTAMAKI",
+  "load_number": "LOAD-001",
+  "pro_number": "PRO-20260607-001",
+  "seal_number": "SEAL-001",
+  "ship_date": "2026-06-07",
+  "shipment_id": "SHIP-20260607-001",
+  "trailer_number": "TRL-001",
+  "weight": "5000",
+  "weight_uom": "LB"
+}

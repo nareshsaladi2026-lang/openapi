@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "carrier": "RYDER",
+      "error_messages": "",
+      "file_id": 5001,
+      "file_name": "RYDER_TMS_20260608_001.txt",
+      "integration_run_id": 9001,
+      "load_number": "LOAD-001",
+      "oic_instance_id": "OIC-PROD3-001",
+      "receipt_date": "2026-06-10",
+      "status": "PROCESSED",
+      "total_count": 1,
+      "total_quantity": 500,
+      "vendor_name": "Huhtamaki Americas",
+      "warehouse_code": "GB01"
+    }
+  ]
+}

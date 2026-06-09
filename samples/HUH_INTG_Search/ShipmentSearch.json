@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "actual_ship_date": "2026-06-07",
+      "actual_ship_time": "08:30",
+      "carrier": "RYDER",
+      "chep_pallet_count": "2",
+      "created_at": "2026-06-08T10:30:00.000Z",
+      "err_msg": "",
+      "int_run_id": 9001,
+      "item": "HUH-ITEM-001",
+      "load_number": "LOAD-001",
+      "locator": "A-01-01",
+      "lot_number": "LOT-2026060801",
+      "number_of_std_pallets": "8",
+      "order_line_num": "1",
+      "order_number": "SO-20260608-001",
+      "org_code": "M1",
+      "original_lpn_number": "LPN-001",
+      "pro": "PRO-20260607-001",
+      "requested_uom_code": "CA",
+      "seal_number": "SEAL-001",
+      "secondary_uom_code": "EA",
+      "shipment": "SHIP-20260607-001",
+      "shipment_line_num": "1",
+      "shipment_method": "TL",
+      "shipped_qty": 500,
+      "ship_date": "2026-06-07",
+      "ship_time": "08:30",
+      "source_system": "ERP",
+      "split_lpn_number": "",
+      "status": "CONFIRMED",
+      "sub_inventory": "FG",
+      "total_count": 1,
+      "trailer_number": "TRL-001",
+      "ucc_128_vase_pallet_code": "00612345678901234560"
+    }
+  ]
+}

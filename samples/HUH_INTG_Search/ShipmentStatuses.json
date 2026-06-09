@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "status": "PENDING"
+    },
+    {
+      "status": "CONFIRMED"
+    },
+    {
+      "status": "IN_TRANSIT"
+    },
+    {
+      "status": "DELIVERED"
+    },
+    {
+      "status": "ERROR"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     "info": {
         "title": "ORDS generated API for HUH_ipc",
         "version": "1.0.0",
-        "description": "Integration Process Count — recon, OB runs, per-integration error drill-down"
+        "description": "Integration Process Count \u2014 recon, OB runs, per-integration error drill-down"
     },
     "servers": [
         {
@@ -38,6 +38,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "created_date": "2026-06-08T10:30:00.000Z",
+                                    "error_msg": "ORA-01403: No data found. Integration FALLBACK failed to locate source record for PO 4500012345.",
+                                    "po_number": "4500012345",
+                                    "record_key": "FALLBACK-ERR-001",
+                                    "status": "ERROR"
                                 }
                             }
                         }
@@ -106,6 +113,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "created_date": "2026-06-08T10:30:00.000Z",
+                                    "error_msg": "SAP IDOC posting failed: Material 1000001 not found in plant NA01.",
+                                    "po_number": "4500012346",
+                                    "record_key": "INT1414-ERR-001",
+                                    "status": "ERROR"
                                 }
                             }
                         }
@@ -166,6 +180,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "created_date": "2026-06-08T10:30:00.000Z",
+                                    "error_msg": "ORA-20001: Order 20260608001 already processed.",
+                                    "po_number": "4500099  ",
+                                    "record_key": 1417001,
+                                    "status": "DUPLICATE"
                                 }
                             }
                         }
@@ -226,6 +247,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "created_date": "2026-06-08T10:30:00.000Z",
+                                    "error_msg": "Connection timeout reaching Manhattan WMS endpoint after 30s. Retry 3/3 failed.",
+                                    "po_number": "4500012348",
+                                    "record_key": "INT4009-ERR-001",
+                                    "status": "TIMEOUT"
                                 }
                             }
                         }
@@ -286,6 +314,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "created_date": "2026-06-08T10:30:00.000Z",
+                                    "error_msg": "EDI 856 ASN rejected: SCAC code 'XYZZ' not found in carrier master.",
+                                    "po_number": "4500012349",
+                                    "record_key": "INT4072-ERR-001",
+                                    "status": "REJECTED"
                                 }
                             }
                         }
@@ -355,6 +390,16 @@
                                             "$ref": "#/components/schemas/NUMBER"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "difference": 2,
+                                    "fail_runs": 2,
+                                    "integration_code": "HUH_OB_856",
+                                    "integration_name": "HUH OB ASN to Walmart 856",
+                                    "rice_object": "I",
+                                    "success_percentage": 96.0,
+                                    "success_runs": 48,
+                                    "total_runs": 50
                                 }
                             }
                         }
@@ -416,6 +461,16 @@
                                             "$ref": "#/components/schemas/NUMBER"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "diffrence": 3,
+                                    "fail_records": 3,
+                                    "integration_code": "HUH_OB_810",
+                                    "integration_name": "HUH OB Invoice to Walmart 810",
+                                    "rice_object": "I",
+                                    "success_percentage": 97.0,
+                                    "success_records": 97,
+                                    "total_records": 100
                                 }
                             }
                         }

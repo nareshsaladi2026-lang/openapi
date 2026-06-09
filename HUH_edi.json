@@ -116,6 +116,31 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "attribute_char1": "STD",
+                                    "attribute_char2": "NET30",
+                                    "attribute_char3": "",
+                                    "attribute_char5": "",
+                                    "bill_to_party_code": "HUH-NA",
+                                    "bill_to_party_duns": "123456789",
+                                    "bill_to_party_gln": "0614141000012",
+                                    "case_upc_14_digit": "10012345678905",
+                                    "customer_item_number": "CUST-ITEM-001",
+                                    "direction": "IB",
+                                    "global_unique_id": "EDI-850-20260608-001",
+                                    "interchange_control_id": "000001234",
+                                    "interchange_receiver_id": "HUHTAMAKI",
+                                    "interchange_sender_id": "WALMART",
+                                    "order_date": "2026-06-08",
+                                    "order_number": "PO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "quantity": "100",
+                                    "quantity_uom": "CA",
+                                    "ship_to_party_code": "DC-001",
+                                    "ship_to_party_gln": "0614141000029",
+                                    "unit_price": "12.50",
+                                    "vendor_code": "HUH-VENDOR-001"
                                 }
                             }
                         }
@@ -235,6 +260,25 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "actual_ship_date": "2026-06-07",
+                                    "bill_of_lading": "BOL-20260607-001",
+                                    "carrier_code": "UPSN",
+                                    "direction": "IB",
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "interchange_control_id": "000001235",
+                                    "interchange_receiver_id": "HUHTAMAKI",
+                                    "interchange_sender_id": "WALMART",
+                                    "item_number": "HUH-ITEM-001",
+                                    "lot_number": "LOT-2026060801",
+                                    "order_number": "PO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "quantity_shipped": "100",
+                                    "quantity_uom": "CA",
+                                    "ship_date": "2026-06-07",
+                                    "shipment_id": "SHIP-20260607-001",
+                                    "tracking_number": "1Z999AA10123456784"
                                 }
                             }
                         }
@@ -332,6 +376,18 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-20260608-001",
+                                    "carrier_code": "RYDER",
+                                    "direction": "OB",
+                                    "global_unique_id": "EDI-204-20260608-001",
+                                    "interchange_control_id": "000001236",
+                                    "interchange_receiver_id": "RYDER",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "load_plan_no": "LP-20260608-001",
+                                    "order_number": "SO-20260608-001",
+                                    "status": "SENT"
                                 }
                             }
                         }
@@ -476,6 +532,33 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-20260608-001",
+                                    "bill_of_landing_number": "BOL-OB-001",
+                                    "carrier_code": "RYDER",
+                                    "customer_po_number": "4500012345",
+                                    "date_tbd1": "2026-06-09",
+                                    "date_tbd2": "2026-06-10",
+                                    "date_tbd3": "",
+                                    "direction": "OB",
+                                    "global_unique_id": "EDI-204-20260608-001",
+                                    "interchange_control_id": "000001236",
+                                    "interchange_receiver_id": "RYDER",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "load_id": "LOAD-001",
+                                    "load_plan_no": "LP-20260608-001",
+                                    "order_date": "2026-06-08",
+                                    "order_number": "SO-20260608-001",
+                                    "origin_city": "Green Bay",
+                                    "origin_state": "WI",
+                                    "origin_zip": "54301",
+                                    "dest_city": "Chicago",
+                                    "dest_state": "IL",
+                                    "dest_zip": "60601",
+                                    "status": "SENT",
+                                    "total_weight": "5000",
+                                    "weight_uom": "LB"
                                 }
                             }
                         }
@@ -733,6 +816,20 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-20260608-001",
+                                    "global_unique_id": "EDI-204-20260608-001",
+                                    "item_description": "Molded Fiber Plate 10in",
+                                    "item_number": "HUH-ITEM-001",
+                                    "line_number": "1",
+                                    "load_plan_no": "LP-20260608-001",
+                                    "order_number": "SO-20260608-001",
+                                    "quantity": "500",
+                                    "quantity_uom": "CA",
+                                    "upc": "10012345678905",
+                                    "weight": "2500",
+                                    "weight_uom": "LB"
                                 }
                             }
                         }
@@ -852,6 +949,14 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-20260608-001",
+                                    "global_unique_id": "EDI-204-20260608-001",
+                                    "load_plan_no": "LP-20260608-001",
+                                    "note_text": "Fragile - handle with care",
+                                    "note_type": "GEN",
+                                    "order_number": "SO-20260608-001"
                                 }
                             }
                         }
@@ -965,6 +1070,19 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "direction": "OB",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "interchange_control_id": "000001237",
+                                    "interchange_receiver_id": "WALMART",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "invoice_number": "INV-20260608-001",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "status": "SENT",
+                                    "total_amount": "6250.00"
                                 }
                             }
                         }
@@ -1209,6 +1327,20 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "invoice_number": "INV-20260608-001",
+                                    "item_description": "Molded Fiber Plate 10in",
+                                    "item_number": "HUH-ITEM-001",
+                                    "line_amount": "6250.00",
+                                    "line_number": "1",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "quantity_invoiced": "500",
+                                    "quantity_uom": "CA",
+                                    "unit_price": "12.50"
                                 }
                             }
                         }
@@ -1625,6 +1757,33 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "appointment_number": "APPT-001",
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "bill_to_party_address1": "702 SW 8th St",
+                                    "bill_to_party_address2": "",
+                                    "bill_to_party_city": "Bentonville",
+                                    "bill_to_party_code": "WALMART-HQ",
+                                    "bill_to_party_country": "US",
+                                    "bill_to_party_duns": "009876543",
+                                    "bill_to_party_name": "Walmart Inc",
+                                    "bill_to_party_state": "AR",
+                                    "bill_to_party_zip": "72716",
+                                    "currency_code": "USD",
+                                    "direction": "OB",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "interchange_control_id": "000001237",
+                                    "interchange_receiver_id": "WALMART",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "invoice_date": "2026-06-08",
+                                    "invoice_number": "INV-20260608-001",
+                                    "order_number": "SO-20260608-001",
+                                    "payment_terms": "NET30",
+                                    "po_number": "4500012345",
+                                    "ship_date": "2026-06-07",
+                                    "total_amount": "6250.00",
+                                    "vendor_code": "HUH-VENDOR-001"
                                 }
                             }
                         }
@@ -1762,6 +1921,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "invoice_number": "INV-20260608-001",
+                                    "note_text": "Thank you for your business",
+                                    "note_type": "GEN"
                                 }
                             }
                         }
@@ -1914,6 +2080,17 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "allowance_charge_code": "C",
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "description": "Fuel Surcharge",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "invoice_number": "INV-20260608-001",
+                                    "line_number": "1",
+                                    "method_of_handling": "06",
+                                    "percent": "5.00",
+                                    "sac_amount": "312.50"
                                 }
                             }
                         }
@@ -2060,6 +2237,15 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "allowance_charge_code": "C",
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "description": "Freight Charge",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "invoice_number": "INV-20260608-001",
+                                    "method_of_handling": "06",
+                                    "sac_amount": "150.00"
                                 }
                             }
                         }
@@ -2266,6 +2452,18 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-INV-20260608-001",
+                                    "bill_of_lading": "BOL-OB-001",
+                                    "carrier_code": "RYDER",
+                                    "global_unique_id": "EDI-810-20260608-001",
+                                    "invoice_number": "INV-20260608-001",
+                                    "ship_date": "2026-06-07",
+                                    "shipment_id": "SHIP-20260607-001",
+                                    "tracking_number": "RYDER-TRK-001",
+                                    "weight": "5000",
+                                    "weight_uom": "LB"
                                 }
                             }
                         }
@@ -2379,6 +2577,17 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "asn_number": "ASN-20260608-001",
+                                    "global_unique_id": "EDI-855-20260608-001",
+                                    "interchange_control_id": "000001238",
+                                    "interchange_receiver_id": "WALMART",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "invoice_number": "INV-20260608-001",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "status": "SENT"
                                 }
                             }
                         }
@@ -3022,6 +3231,18 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "acknowledgement_type": "AC",
+                                    "global_unique_id": "EDI-855-20260608-001",
+                                    "interchange_control_id": "000001238",
+                                    "item_number": "HUH-ITEM-001",
+                                    "line_number": "1",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "promised_ship_date": "2026-06-09",
+                                    "quantity_acknowledged": "500",
+                                    "quantity_uom": "CA"
                                 }
                             }
                         }
@@ -3127,6 +3348,18 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "batch": "BATCH-ASN-20260608-001",
+                                    "direction": "OB",
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "interchange_control_id": "000001239",
+                                    "interchange_receiver_id": "WALMART",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "shipment_id": "SHIP-20260607-001",
+                                    "status": "SENT"
                                 }
                             }
                         }
@@ -3388,6 +3621,17 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "address1": "702 SW 8th St",
+                                    "address2": "",
+                                    "address_type": "ST",
+                                    "city": "Bentonville",
+                                    "country": "US",
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "name": "Walmart DC 6094",
+                                    "state": "AR",
+                                    "zip": "72716"
                                 }
                             }
                         }
@@ -3667,6 +3911,20 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "case_upc_14_digit": "10012345678905",
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "item_description": "Molded Fiber Plate 10in",
+                                    "item_number": "HUH-ITEM-001",
+                                    "line_number": "1",
+                                    "lot_number": "LOT-2026060801",
+                                    "order_line_number": "1",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "quantity_shipped": "500",
+                                    "quantity_uom": "CA",
+                                    "unit_price": "12.50"
                                 }
                             }
                         }
@@ -3823,6 +4081,13 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "order_date": "2026-06-08",
+                                    "order_number": "SO-20260608-001",
+                                    "po_number": "4500012345",
+                                    "shipment_id": "SHIP-20260607-001"
                                 }
                             }
                         }
@@ -4075,6 +4340,15 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "item_number": "HUH-ITEM-001",
+                                    "lot_number": "LOT-2026060801",
+                                    "package_level": "P",
+                                    "package_type": "PLT",
+                                    "quantity_per_pack": "50",
+                                    "sscc": "00612345678901234560"
                                 }
                             }
                         }
@@ -4288,6 +4562,27 @@
                                             "$ref": "#/components/schemas/VARCHAR2"
                                         }
                                     }
+                                },
+                                "example": {
+                                    "appointment_number": "APPT-001",
+                                    "date_tbd1": "2026-06-09",
+                                    "date_tbd2": "",
+                                    "date_tbd3": "",
+                                    "delivery_date": "2026-06-10",
+                                    "department_number": "DEPT-001",
+                                    "direction": "OB",
+                                    "global_unique_id": "EDI-856-20260608-001",
+                                    "interchange_control_id": "000001239",
+                                    "interchange_receiver_id": "WALMART",
+                                    "interchange_sender_id": "HUHTAMAKI",
+                                    "load_number": "LOAD-001",
+                                    "pro_number": "PRO-20260607-001",
+                                    "seal_number": "SEAL-001",
+                                    "ship_date": "2026-06-07",
+                                    "shipment_id": "SHIP-20260607-001",
+                                    "trailer_number": "TRL-001",
+                                    "weight": "5000",
+                                    "weight_uom": "LB"
                                 }
                             }
                         }

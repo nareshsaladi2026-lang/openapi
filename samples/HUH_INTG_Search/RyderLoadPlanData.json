@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "delivery_date": "2026-06-10",
+      "delivery_time": "14:00",
+      "departure_date": "2026-06-09",
+      "departure_time": "06:00",
+      "file_header_id": 5001,
+      "integration_run_id": 9001,
+      "load_plan_no": "LP-20260608-001",
+      "order_no": "SO-20260608-001",
+      "pick_up_date": "2026-06-09",
+      "pick_up_time": "06:00"
+    }
+  ]
+}

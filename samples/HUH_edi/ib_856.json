@@ -1,0 +1,19 @@
+{
+  "actual_ship_date": "2026-06-07",
+  "bill_of_lading": "BOL-20260607-001",
+  "carrier_code": "UPSN",
+  "direction": "IB",
+  "global_unique_id": "EDI-856-20260608-001",
+  "interchange_control_id": "000001235",
+  "interchange_receiver_id": "HUHTAMAKI",
+  "interchange_sender_id": "WALMART",
+  "item_number": "HUH-ITEM-001",
+  "lot_number": "LOT-2026060801",
+  "order_number": "PO-20260608-001",
+  "po_number": "4500012345",
+  "quantity_shipped": "100",
+  "quantity_uom": "CA",
+  "ship_date": "2026-06-07",
+  "shipment_id": "SHIP-20260607-001",
+  "tracking_number": "1Z999AA10123456784"
+}

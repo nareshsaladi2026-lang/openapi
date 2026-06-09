@@ -1,0 +1,11 @@
+{
+  "allowance_charge_code": "C",
+  "batch": "BATCH-INV-20260608-001",
+  "description": "Fuel Surcharge",
+  "global_unique_id": "EDI-810-20260608-001",
+  "invoice_number": "INV-20260608-001",
+  "line_number": "1",
+  "method_of_handling": "06",
+  "percent": "5.00",
+  "sac_amount": "312.50"
+}
