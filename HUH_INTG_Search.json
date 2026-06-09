@@ -1,0 +1,1546 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ORDS generated API for HUH_INTG_Search",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://huh1asherpprd.huhtamaki.com/ords/huhna_db/HUH_INTG_Search"
+        }
+    ],
+    "paths": {
+        "/Details": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "action_request_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "actual_delivery_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "assign_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "business_unit": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "carrier": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "carrier_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "created_by": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "creation_date": {
+                                                        "$ref": "#/components/schemas/TIMESTAMP"
+                                                    },
+                                                    "cube_uom": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "cube_value": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "delivery_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "delivery_date_utc": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "delivery_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "delivery_time_utc": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "departure_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "departure_date_utc": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "departure_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "departure_time_utc": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "destination_city": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "destination_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "destination_state": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "destination_zip": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "distance_uom": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "erp_order_type": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "file_header_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "flatrate": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "freight_multiplier": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "fulfillmentorg_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "handing_uom": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "handling_unit": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "integration_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "integration_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "intentionally_blank": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "int_message": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "is_freight_flat": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "item_description": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "item_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "last_reason": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "line_haul_rate": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "line_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_plan_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_weight": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ltl_class": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "means_of_transportation": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_type": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "originating_city": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "originating_state": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "originating_zip": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "payment_method": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pick_up_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pick_up_date_utc": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pick_up_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pick_up_time_utc": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pro_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "quantity": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "quantity_uom": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipping_charge": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ship_line_num": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ship_num": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "site_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "source_transaction_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "source_transaction_system": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_freight_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_header_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "so_release_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_submit_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_update_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "stop_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "sub_inventory": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "time_stamp": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_cost": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_distance": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "to_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "trailer_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "transactioncategorycode": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "warehouse": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "weight_uom": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "load_plan_no",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/HUH_INTG_Search": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "assign_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "erp_order_type": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "file_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "file_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "integration_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "int_messages": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_plan_count_per_file": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "load_plan_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_nos": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_freight_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_release_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_submit_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "so_update_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_count": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "unique_id": {
+                                                        "$ref": "#/components/schemas/ROWID"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "erp_order_type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "error_message",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "file_name",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "integration_code",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "load_plan_no",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "only_error_record",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "order_no",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/RyderBeforeReprocessUpdate": {
+            "put": {
+                "description": "Create or update a record on HUH_INTG_Search",
+                "responses": {
+                    "201": {
+                        "description": "The successfully created record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "The successfully updated record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/HUH_INTG_Search_ITEM"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/RyderLoadPlanData": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "delivery_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "delivery_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "departure_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "departure_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "file_header_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "integration_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "load_plan_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_no": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pick_up_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pick_up_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "file_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "load_plan_no",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            },
+            "put": {
+                "description": "Create or update a record on HUH_INTG_Search",
+                "responses": {
+                    "201": {
+                        "description": "The successfully created record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "The successfully updated record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/HUH_INTG_Search_ITEM_2"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ShipmentHeaderSearch": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "carrier": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "create_at": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "int_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "load_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "number_of_chep_pallets": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "number_of_std_pallets": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "org_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "seal_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ship_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "source": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_count": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "trailer_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "transaction_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ucc_128_vase_pallet_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "order_number",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "shipment",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "source_system",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/ShipmentLineSearch": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "error_dtl": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "item": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "licence_plate_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "locator": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lot_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_line_num": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_num": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "over_under_ship_reason": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pro": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "requested_uom_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "secondary_uom_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment_method": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipped_qty": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "ship_line_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "source": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "split_lpn_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "subinv": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "int_run_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "shipment",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/ShipmentLineUpdate": {
+            "put": {
+                "description": "Create or update a record on HUH_INTG_Search",
+                "responses": {
+                    "201": {
+                        "description": "The successfully created record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message_out": {
+                                            "type": "string"
+                                        },
+                                        "status_out": {
+                                            "type": "string"
+                                        },
+                                        "updated_out": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "The successfully updated record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message_out": {
+                                            "type": "string"
+                                        },
+                                        "status_out": {
+                                            "type": "string"
+                                        },
+                                        "updated_out": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/HUH_INTG_Search_ITEM_2"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ShipmentSearch": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "actual_ship_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "actual_ship_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "carrier": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "chep_pallet_count": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "created_at": {
+                                                        "$ref": "#/components/schemas/TIMESTAMP"
+                                                    },
+                                                    "err_msg": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "int_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "item": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "locator": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lot_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "number_of_std_pallets": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_line_num": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "org_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "original_lpn_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "pro": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "requested_uom_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "seal_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "secondary_uom_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment_line_num": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipment_method": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "shipped_qty": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "ship_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ship_time": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "source_system": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "split_lpn_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "sub_inventory": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_count": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "trailer_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "ucc_128_vase_pallet_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "err_msg",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "order_number",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "shipment",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "source_system",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/ShipmentStatuses": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/TMSHeaderLineSearch": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "attribute1": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "carrier": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "creation_date": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "erp_dest_org_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "erp_from_org_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "error_message": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "file_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "group_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "integration_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "item": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "last_update_date": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "line_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lot_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lot_num_lotcontrol": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lpn": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "oic_instance_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "quantity": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "receipt_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "receipt_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "record_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "remaining_qty": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_count": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "vendor_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "warehouse_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "error_message",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "load_number",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "receipt_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "receipt_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/TMSHeaderSearch": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "carrier": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "error_messages": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "file_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "file_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "integration_run_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "load_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "oic_instance_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "receipt_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "total_count": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "total_quantity": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "vendor_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "warehouse_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "error_message",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "load_number",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "receipt_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "receipt_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/TMSLineSearch": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "carrier": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "error_message": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "item": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "load_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lot_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "lpn": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "order_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "quantity": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "receipt_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "record_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "warehouse_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "file_name",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "load_number",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/TMSStatuses": {
+            "get": {
+                "description": "Retrieve records from HUH_INTG_Search",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CHAR": {
+                "type": "string"
+            },
+            "DATE": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-[01]\\d-[0123]\\dT[012]\\d:[0-5]\\d:[0-5]\\d(.\\d+)?(Z|([-+][012]\\d:[0-5]\\d))$"
+            },
+            "NUMBER": {
+                "type": "number"
+            },
+            "ROWID": {
+                "type": "string"
+            },
+            "STRING": {
+                "type": "string"
+            },
+            "TIMESTAMP": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-[01]\\d-[0123]\\dT[012]\\d:[0-5]\\d:[0-5]\\d(.\\d+)?(Z|([-+][012]\\d:[0-5]\\d))$"
+            },
+            "VARCHAR2": {
+                "type": "string"
+            },
+            "HUH_INTG_Search_ITEM": {
+                "properties": {
+                    "erp_order_type": {
+                        "type": "string"
+                    },
+                    "file_header_id": {
+                        "type": "string"
+                    },
+                    "integration_run_id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "HUH_INTG_Search_ITEM_2": {
+                "properties": {
+                    "body_text": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

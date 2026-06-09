@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huhtamaki OpenAPI Specs</title>
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css" />
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #nav {
+      background: #1b1b1b;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #nav span { color: #ccc; font-size: 14px; margin-right: 8px; }
+    #nav button {
+      background: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 6px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #nav button.active, #nav button:hover {
+      background: #4990e2;
+      border-color: #4990e2;
+    }
+    #swagger-ui { padding-top: 4px; }
+  </style>
+</head>
+<body>
+  <div id="nav">
+    <span>Huhtamaki APIs:</span>
+    <button onclick="load('HUH_edi.json', this)" class="active">HUH_edi</button>
+    <button onclick="load('HUH_INTG_Search.json', this)">HUH_INTG_Search</button>
+    <button onclick="load('HUH_ipc.json', this)">HUH_ipc</button>
+  </div>
+  <div id="swagger-ui"></div>
+
+  <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+  <script>
+    let ui;
+    function load(spec, btn) {
+      document.querySelectorAll('#nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (ui) {
+        ui = SwaggerUIBundle({ url: spec, dom_id: '#swagger-ui', presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset], layout: 'BaseLayout', deepLinking: true });
+      } else {
+        ui = SwaggerUIBundle({ url: spec, dom_id: '#swagger-ui', presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset], layout: 'BaseLayout', deepLinking: true });
+      }
+    }
+    load('HUH_edi.json', document.querySelector('#nav button'));
+  </script>
+</body>
+</html>

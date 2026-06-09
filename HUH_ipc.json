@@ -1,0 +1,466 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ORDS generated API for HUH_ipc",
+        "version": "1.0.0",
+        "description": "Integration Process Count — recon, OB runs, per-integration error drill-down"
+    },
+    "servers": [
+        {
+            "url": "https://erpdev.huhtamaki.com/ords/huhna_db/HUH_ipc"
+        }
+    ],
+    "paths": {
+        "/errors/fallback": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created_date": {
+                                            "$ref": "#/components/schemas/TIMESTAMP"
+                                        },
+                                        "error_msg": {
+                                            "$ref": "#/components/schemas/CLOB"
+                                        },
+                                        "po_number": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "record_key": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "status": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "int_code",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "row_limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/errors/int1414": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created_date": {
+                                            "$ref": "#/components/schemas/TIMESTAMP"
+                                        },
+                                        "error_msg": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "po_number": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "record_key": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "status": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "row_limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/errors/int1417": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created_date": {
+                                            "$ref": "#/components/schemas/TIMESTAMP"
+                                        },
+                                        "error_msg": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "po_number": {
+                                            "$ref": "#/components/schemas/CHAR"
+                                        },
+                                        "record_key": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "status": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "row_limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/errors/int4009": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created_date": {
+                                            "$ref": "#/components/schemas/TIMESTAMP"
+                                        },
+                                        "error_msg": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "po_number": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "record_key": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "status": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "row_limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/errors/int4072": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created_date": {
+                                            "$ref": "#/components/schemas/TIMESTAMP"
+                                        },
+                                        "error_msg": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "po_number": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "record_key": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "status": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "row_limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/obruns": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "difference": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "fail_runs": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "integration_code": {
+                                            "$ref": "#/components/schemas/CHAR"
+                                        },
+                                        "integration_name": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "rice_object": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "success_percentage": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "success_runs": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "total_runs": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        },
+        "/recon": {
+            "get": {
+                "description": "Retrieve a record from HUH_ipc",
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "diffrence": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "fail_records": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "integration_code": {
+                                            "$ref": "#/components/schemas/CHAR"
+                                        },
+                                        "integration_name": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "rice_object": {
+                                            "$ref": "#/components/schemas/VARCHAR2"
+                                        },
+                                        "success_percentage": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "success_records": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        },
+                                        "total_records": {
+                                            "$ref": "#/components/schemas/NUMBER"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "p_from_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    },
+                    {
+                        "name": "p_to_date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Implicit parameter"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CHAR": {
+                "type": "string"
+            },
+            "CLOB": {
+                "type": "string"
+            },
+            "NUMBER": {
+                "type": "number"
+            },
+            "TIMESTAMP": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-[01]\\d-[0123]\\dT[012]\\d:[0-5]\\d:[0-5]\\d(.\\d+)?(Z|([-+][012]\\d:[0-5]\\d))$"
+            },
+            "VARCHAR2": {
+                "type": "string"
+            }
+        }
+    }
+}
